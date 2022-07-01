@@ -69,11 +69,20 @@ Object Oriented Design
 | PETTYPE_LIST3  |
 | PETTYPE_LIST4  |
  
-| Actions  | Frontend to View | View to Backend (DB) |
-|----------|------------------|----------------------|
-| asdf()   | x                |                      |
-| fdsfsd() |                  | x                    |
-
+| Actions           | Frontend to View | View to Backend (DB) | outcome         | precondition                   | postcondition                                |
+|-------------------|------------------|----------------------|-----------------|--------------------------------|----------------------------------------------|
+| button_addNew()   | x                |                      | change state    | PETTYPE_LIST                   | PETTYPE_NEW                                  |
+| button_edit()     | x                |                      | change state    | PETTYPE_LIST                   | PETTYPE_EDIT                                 |
+| button_delete()   | x                |                      | change state    | PETTYPE_LIST                   | PETTYPE_DELETE                               |
+| cancel_and_back() | x                |                      | change state    | PETTYPE_NEW                    | PETTYPE_LIST                                 |
+| cancel_and_back() | x                |                      | change state    | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
+| cancel_and_back() | x                |                      | change state    | PETTYPE_DELETE                 | PETTYPE_LIST                                 |
+| addNew()          |                  | x                    | OK              | length(list(pettype)) = n      | length(list(pettype)) = n+1                  |
+| addNew()          |                  | x                    | not OK, invalid | length(list(pettype)) = n      | display cause as flash message               |
+| update()          |                  | x                    | OK              | length(list(pettype)) = n      | length(list(pettype)) = n; 1 element changed |
+| update()          |                  | x                    | not OK, invalid | length(list(pettype)) = n      | display cause as flash message               |
+| delete()          |                  | x                    | OK              | length(list(pettype)) = n > 0  | length(list(pettype)) = n-1                  |
+| delete()          |                  | x                    | not OK, invalid | length(list(pettype)) = n >= 0 | display cause as flash message               |
 
 ![Figure Uses Cases PetType](uml/pettype/PetType__StateEngine-PetType_State_Diagram.png)
 
