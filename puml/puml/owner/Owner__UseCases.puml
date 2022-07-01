@@ -1,0 +1,34 @@
+@startuml
+
+title Owner Use Case Diagram
+
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+'top to bottom direction
+
+scale 1000 width
+
+User - (Login)
+package owner {
+    (Login) -> (Navigation)
+    (Navigation) --> (Owner.list)
+    (Start) -> (Owner.search)
+    (Owner.list) -> (Owner.search)
+    (Owner.list) --> (Owner.addNew)
+    (Owner.list) --> (Owner.edit)
+    (Owner.list) --> (Owner.delete)
+    package owner.pet {
+        (Owner.list) --> (Owner.Pet.list)
+        (Owner.Pet.list) --> (Owner.Pet.addNew)
+        (Owner.Pet.list) --> (Owner.Pet.edit)
+        (Owner.Pet.list) --> (Owner.Pet.delete)
+         package owner.pet.visit {
+            (Owner.Pet.list) --> (Owner.Pet.Visit.list)
+            (Owner.Pet.Visit.list) --> (Owner.Pet.Visit.addNew)
+            (Owner.Pet.Visit.list) --> (Owner.Pet.Visit.edit)
+            (Owner.Pet.Visit.list) --> (Owner.Pet.Visit.delete)
+        }
+    }
+}
+@enduml
