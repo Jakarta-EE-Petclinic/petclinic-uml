@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title SpecialtyView Class Diagram
+
+left to right direction
+'top to bottom direction
+
+class SpecialtyView {
+    SpecialtyState currentState
+    button_addNew_dialog(): SpecialtyState
+    button_cancel_and_back(): SpecialtyState
+    button_addNew_perform(): SpecialtyState
+    - db_addNew(): void
+    button_edit_dialog(): SpecialtyState
+    button_update_perform(): SpecialtyState
+    - db_update(): void
+    button_delete_dialog(): SpecialtyState
+    button_delete_perform(): SpecialtyState
+    - db_delete(): void
+}
+
+enum SpecialtyState {
+    SPECIALTY_LIST
+    SPECIALTY_NEW
+    SPECIALTY_EDIT
+    SPECIALTY_DELETE
+}
+
+@enduml

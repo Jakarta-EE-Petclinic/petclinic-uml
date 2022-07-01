@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title PetTypeView Class Diagram
+
+left to right direction
+'top to bottom direction
+
+class PetTypeView {
+    PetTypeState currentState
+    button_addNew_dialog(): PetTypeState
+    button_cancel_and_back(): PetTypeState
+    button_addNew_perform(): PetTypeState
+    - db_addNew(): void
+    button_edit_dialog(): PetTypeState
+    button_update_perform(): PetTypeState
+    - db_update(): void
+    button_delete_dialog():PetTypeState
+    button_delete_perform():PetTypeState
+    - db_delete(): void
+}
+
+enum PetTypeState {
+    PETTYPE_LIST
+    PETTYPE_NEW
+    PETTYPE_EDIT
+    PETTYPE_DELETE
+}
+
+@enduml
