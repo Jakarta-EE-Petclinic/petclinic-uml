@@ -11,13 +11,13 @@ class PetTypeView {
     button_addNew_dialog(): PetTypeState
     button_cancel_and_back(): PetTypeState
     button_addNew_perform(): PetTypeState
-    - db_addNew(): void
+    - db_addNew(): boolean
     button_edit_dialog(): PetTypeState
     button_update_perform(): PetTypeState
-    - db_update(): void
+    - db_update(): boolean
     button_delete_dialog():PetTypeState
     button_delete_perform():PetTypeState
-    - db_delete(): void
+    - db_delete(): boolean
 }
 
 enum PetTypeState {

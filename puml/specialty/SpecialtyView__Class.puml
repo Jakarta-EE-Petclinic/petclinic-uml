@@ -11,13 +11,13 @@ class SpecialtyView {
     button_addNew_dialog(): SpecialtyState
     button_cancel_and_back(): SpecialtyState
     button_addNew_perform(): SpecialtyState
-    - db_addNew(): void
+    - db_addNew(): boolean
     button_edit_dialog(): SpecialtyState
     button_update_perform(): SpecialtyState
-    - db_update(): void
+    - db_update(): boolean
     button_delete_dialog(): SpecialtyState
     button_delete_perform(): SpecialtyState
-    - db_delete(): void
+    - db_delete(): boolean
 }
 
 enum SpecialtyState {
