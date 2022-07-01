@@ -59,13 +59,16 @@ Object Oriented Design
 ![Figure Uses Cases PetType](uml/pettype/PetType__UseCases-PetType_Use_Case_Diagram.png)
 ### PetType State Diagram
 
-| PetType States                                             |
-|------------------------------------------------------------|
-| PETTYPE_LIST (PETTYPE_LIST2, PETTYPE_LIST3 ,PETTYPE_LIST4) |
-| PETTYPE_NEW                                                |
-| PETTYPE_EDIT                                               |
-| PETTYPE_DELETE                                             |
-
+| PetType States |
+|----------------|
+| PETTYPE_LIST   |
+| PETTYPE_NEW    |
+| PETTYPE_EDIT   |
+| PETTYPE_DELETE |
+| PETTYPE_LIST2  |
+| PETTYPE_LIST3  |
+| PETTYPE_LIST4  |
+ 
 | Actions  | Frontend to View | View to Backend (DB) |
 |----------|------------------|----------------------|
 | asdf()   | x                |                      |
@@ -91,11 +94,14 @@ Object Oriented Design
 
 ### Specialty State Diagram
 
-| Specialty States                                                   | 
-|--------------------------------------------------------------------|
-| SPECIALTY_LIST (SPECIALTY_LIST2, SPECIALTY_LIST3, SPECIALTY_LIST4) |
-| SPECIALTY_NEW                                                      |
-| SPECIALTY_DELETE                                                   |    
+| Specialty States | 
+|------------------|
+| SPECIALTY_LIST   |
+| SPECIALTY_NEW    |
+| SPECIALTY_DELETE |    
+| SPECIALTY_LIST2  |
+| SPECIALTY_LIST3  |
+| SPECIALTY_LIST4  |
 
 | Actions  | Frontend to View | View to Backend (DB) |
 |----------|------------------|----------------------|
@@ -122,12 +128,15 @@ Object Oriented Design
 
 ### Vetinarian State Diagram
 
-| Vetinarian States                          |
-|--------------------------------------------|
-| VET_LIST (VET_LIST2 ,VET_LIST3 ,VET_LIST4) |
-| VET_NEW                                    |
-| VET_EDIT                                   |
-| VET_DELETE                                 |
+| Vetinarian States |
+|-------------------|
+| VET_LIST          |
+| VET_NEW           |
+| VET_EDIT          |
+| VET_DELETE        |      
+| VET_LIST2         |
+| VET_LIST3         |  
+| VET_LIST4         |  
 
 | Actions  | Frontend to View | View to Backend (DB) |
 |----------|------------------|----------------------|
