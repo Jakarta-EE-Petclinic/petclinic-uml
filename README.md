@@ -21,9 +21,9 @@ of the Frameworks.
 but Jakarta EE uses JSF (Java Server Faces), a Component Based Web/Presentation-Tier. 
 
 This Specification should also serve as Specification for non-Web Frontends like:
-* [Qt (C++)]()
-* [Qt (Python)]()
-* [Java Swing]()
+* [Qt (C++)](https://jakarta-ee-petclinic.github.io/petclinic-qt5/)
+* [Qt (Python)](https://jakarta-ee-petclinic.github.io/petclinic-pyqt/)
+* [Java Swing](https://jakarta-ee-petclinic.github.io/petclinic-java-swing/)
 
 ## Why Petclinic? 
 
