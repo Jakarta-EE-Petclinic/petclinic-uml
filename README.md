@@ -56,8 +56,11 @@ Object Oriented Design
 | PetType.edit      |
 | PetType.delete    | 
 
-![Figure Uses Cases PetType](uml/pettype/PetType__UseCases-PetType_Use_Case_Diagram.png)
+![Figure Uses Case PetType](uml/pettype/PetType__UseCase-PetType_Use_Case_Diagram.png)
+
 ### PetType State Diagram
+
+![Figure Uses Cases PetType](uml/pettype/PetType__State-PetType_State_Diagram.png)
 
 | PetType States |
 |----------------|
@@ -88,7 +91,7 @@ Object Oriented Design
 | PetType.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
 | PetType.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
-![Figure Uses Cases PetType](uml/pettype/PetType__StateEngine-PetType_State_Diagram.png)
+![Figure PetTypeView](uml/pettype/PetTypeView__Class-PetTypeView_Class_Diagram.png)
 
 
 ## Specialty
@@ -103,9 +106,11 @@ Object Oriented Design
 | Specialty.edit      |
 | Specialty.delete    |
 
-![Figure Uses Cases Specialty](uml/specialty/Specialty__UseCases-Specialty_Use_Case_Diagram.png)
+![Figure Uses Case Specialty](uml/specialty/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
 
 ### Specialty State Diagram
+
+![Figure Uses Cases Specialty](uml/specialty/Specialty__State-Specialty_State_Diagram.png)
 
 | Specialty States | 
 |------------------|
@@ -136,8 +141,7 @@ Object Oriented Design
 | Specialty.db_delete()              |                                 | x                    | OK                  | length(list(Specialty)) = n > 0  | length(list(Specialty)) = n-1                  |
 | Specialty.db_delete()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
 
-![Figure Uses Cases Specialty](uml/specialty/Specialty__StateEngine-Specialty_State_Diagram.png)
-
+![Figure Class SpecialtyView](uml/specialty/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
 
 ## Vetinarian
 
@@ -151,9 +155,11 @@ Object Oriented Design
 | Vet.edit             |
 | Vet.delete           |
 
-![Figure Uses Cases Vet](uml/vet/Vet__UseCases-Vetinarian_Use_Case_Diagram.png)
+![Figure Uses Cases Vet](uml/vet/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
 
 ### Vetinarian State Diagram
+
+![Figure Vetinarian_State_Diagram](uml/vet/Vet__State-Vetinarian_State_Diagram.png)
 
 | Vetinarian States |
 |-------------------|
@@ -183,7 +189,7 @@ Object Oriented Design
 | Vetinarian.db_delete()              |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n-1                  |
 | Vetinarian.db_delete()              |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
 
-![Figure Uses Cases Vet](uml/vet/Vet__StateEngine-Vetinarian_State_Diagram.png)
+![Figure Class VetView](uml/vet/VetView__Class-VetView_Class_Diagram.png)
 
 ## Owner
 
