@@ -188,7 +188,7 @@ Object Oriented Design
 ### Owner State Diagram of Pet and Visits
 ![Figure Uses Cases Owner](uml/owner/Owner__StateEngine__details-Owner_State_Diagram_of_Pet_and_Visits.png)
 
-## Disclaimer
+## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
 * [This Document](https://jakarta-ee-petclinic.github.io/petclinic-uml/)
 * [github repository](https://github.com/Jakarta-EE-Petclinic/petclinic-uml)
