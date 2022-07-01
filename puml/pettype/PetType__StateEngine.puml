@@ -3,8 +3,8 @@
 title PetType State Diagram
 'https://plantuml.com/state-diagram
 
-' left to right direction
-top to bottom direction
+left to right direction
+' top to bottom direction
 
 scale 1000 width
 
