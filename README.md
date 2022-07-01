@@ -68,24 +68,25 @@ Object Oriented Design
 | PETTYPE_LIST2  |
 | PETTYPE_LIST3  |
 | PETTYPE_LIST4  |
- 
-| Actions                         | Frontend to View              | View to Backend (DB) | outcome           | precondition                   | postcondition                                |
-|---------------------------------|-------------------------------|----------------------|-------------------|--------------------------------|----------------------------------------------|
-| PetType.button_dialog_addNew()  | x                             |                      | change state      | PETTYPE_LIST                   | PETTYPE_NEW                                  |
-| PetType.button_dialog_edit()    | x                             |                      | change state      | PETTYPE_LIST                   | PETTYPE_EDIT                                 |
-| PetType.button_dialog_delete()  | x                             |                      | change state      | PETTYPE_LIST                   | PETTYPE_DELETE                               |
-| PetType.cancel_and_back()       | x                             |                      | change state      | PETTYPE_NEW                    | PETTYPE_LIST                                 |
-| PetType.cancel_and_back()       | x                             |                      | change state      | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
-| PetType.cancel_and_back()       | x                             |                      | change state      | PETTYPE_DELETE                 | PETTYPE_LIST                                 |
-| PetType.button_perform_addNew() | x  calls: PetType.db_addNew() |                      | OK: change state  | PETTYPE_NEW                    | PETTYPE_LIST                                 |
-| PetType.db_addNew()             |                               | x                    | OK                | length(list(pettype)) = n      | length(list(pettype)) = n+1                  |
-| PetType.db_addNew()             |                               | x                    | not OK, invalid   | length(list(pettype)) = n      | display cause as flash message               |
-| PetType.button_perform_update() | x  calls: PetType.db_update() |                      | OK                | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
-| PetType.db_update()             |                               | x                    | OK                | length(list(pettype)) = n      | length(list(pettype)) = n; 1 element changed |
-| PetType.db_update()             |                               | x                    | not OK, invalid   | length(list(pettype)) = n      | display cause as flash message               |
-| PetType.button_perform_delete() | x  calls: PetType.db_delete() |                      | OK                | length(list(pettype)) = n > 0  | length(list(pettype)) = n-1                  |
-| PetType.db_delete()             |                               | x                    | OK                | length(list(pettype)) = n > 0  | length(list(pettype)) = n-1                  |
-| PetType.db_delete()             |                               | x                    | not OK, invalid   | length(list(pettype)) = n >= 0 | display cause as flash message               |
+
+
+| Actions                          | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
+|----------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
+| PetType.button_addNew_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_NEW                                  |
+| PetType.button_edit_dialog()     | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_EDIT                                 |
+| PetType.button_delete_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_DELETE                               |
+| PetType.cancel_and_back()        | x                             |                      | change state        | PETTYPE_NEW                    | PETTYPE_LIST                                 |
+| PetType.cancel_and_back()        | x                             |                      | change state        | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
+| PetType.cancel_and_back()        | x                             |                      | change state        | PETTYPE_DELETE                 | PETTYPE_LIST                                 |
+| PetType.button_addNew_perform()  | x, calls: PetType.db_addNew() |                      | if OK: change state | PETTYPE_NEW                    | PETTYPE_LIST                                 |
+| PetType.db_addNew()              |                               | x                    | OK                  | length(list(PetType)) = n      | length(list(PetType)) = n+1                  |
+| PetType.db_addNew()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n      | display cause as flash message               |
+| PetType.button_update_perform()  | x, calls: PetType.db_update() |                      | if OK: change state | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
+| PetType.db_update()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n; 1 element changed |
+| PetType.db_update()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
+| PetType.button_delete_perform()  | x, calls: PetType.db_delete() |                      | if OK: change state | PETTYPE_DELETE                 | PETTYPE_LIST                                 |
+| PetType.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
+| PetType.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
 ![Figure Uses Cases PetType](uml/pettype/PetType__StateEngine-PetType_State_Diagram.png)
 
@@ -121,23 +122,23 @@ Object Oriented Design
 | asdf()   | x                |                      |
 | fdsfsd() |                  | x                    |
 
-| Actions                         | Frontend to View                | View to Backend (DB) | outcome           | precondition                   | postcondition                                  |
-|---------------------------------|---------------------------------|----------------------|-------------------|--------------------------------|------------------------------------------------|
-| Specialty.button_dialog_addNew()  | x                               |                      | change state      | SPECIALTY_LIST                 | SPECIALTY_NEW                                  |
-| Specialty.button_dialog_edit()    | x                               |                      | change state      | SPECIALTY_LIST                 | SPECIALTY_EDIT                                 |
-| Specialty.button_dialog_delete()  | x                               |                      | change state      | SPECIALTY_LIST                 | SPECIALTY_DELETE                               |
-| Specialty.cancel_and_back()       | x                               |                      | change state      | SPECIALTY_NEW                  | SPECIALTY_LIST                                 |
-| Specialty.cancel_and_back()       | x                               |                      | change state      | SPECIALTY_EDIT                 | SPECIALTY_LIST                                 |
-| Specialty.cancel_and_back()       | x                               |                      | change state      | SPECIALTY_DELETE               | SPECIALTY_LIST                                 |
-| Specialty.button_perform_addNew() | x, calls: Specialty.db_addNew() |                      | OK: change state  | SPECIALTY_NEW                  | SPECIALTY_LIST                                 |
-| Specialty.db_addNew()             |                                 | x                    | OK                | length(list(pettype)) = n      | length(list(pettype)) = n+1                    |
-| Specialty.db_addNew()             |                                 | x                    | not OK, invalid   | length(list(pettype)) = n      | display cause as flash message                 |
-| Specialty.button_perform_update() | x, calls: Specialty.db_update() |                      | OK                | PETTYPE_EDIT                   | PETTYPE_LIST                                   |
-| Specialty.db_update()             |                                 | x                    | OK                | length(list(pettype)) = n      | length(list(pettype)) = n; 1 element changed   |
-| Specialty.db_update()             |                                 | x                    | not OK, invalid   | length(list(pettype)) = n      | display cause as flash message                 |
-| Specialty.button_perform_delete() | x, calls: Specialty.db_delete() |                      | OK                | length(list(pettype)) = n > 0  | length(list(pettype)) = n-1                    |
-| Specialty.db_delete()             |                                 | x                    | OK                | length(list(pettype)) = n > 0  | length(list(pettype)) = n-1                    |
-| Specialty.db_delete()             |                                 | x                    | not OK, invalid   | length(list(pettype)) = n >= 0 | display cause as flash message                 |
+| Actions                            | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
+|------------------------------------|---------------------------------|----------------------|---------------------|----------------------------------|------------------------------------------------|
+| Specialty.button_addNew_dialog()   | x                               |                      | change state        | SPECIALTY_LIST                   | SPECIALTY_NEW                                  |
+| Specialty.button_edit_dialog()     | x                               |                      | change state        | SPECIALTY_LIST                   | SPECIALTY_EDIT                                 |
+| Specialty.button_delete_dialog()   | x                               |                      | change state        | SPECIALTY_LIST                   | SPECIALTY_DELETE                               |
+| Specialty.cancel_and_back()        | x                               |                      | change state        | SPECIALTY_NEW                    | SPECIALTY_LIST                                 |
+| Specialty.cancel_and_back()        | x                               |                      | change state        | SPECIALTY_EDIT                   | SPECIALTY_LIST                                 |
+| Specialty.cancel_and_back()        | x                               |                      | change state        | SPECIALTY_DELETE                 | SPECIALTY_LIST                                 |
+| Specialty.button_addNew_perform()  | x, calls: Specialty.db_addNew() |                      | if OK: change state | SPECIALTY_NEW                    | SPECIALTY_LIST                                 |
+| Specialty.db_addNew()              |                                 | x                    | OK                  | length(list(Specialty)) = n      | length(list(Specialty)) = n+1                  |
+| Specialty.db_addNew()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n      | display cause as flash message                 |
+| Specialty.button_update_perform()  | x, calls: Specialty.db_update() |                      | if OK: change state | SPECIALTY_EDIT                   | SPECIALTY_LIST                                 |
+| Specialty.db_update()              |                                 | x                    | OK                  | length(list(Specialty)) = n > 0  | length(list(Specialty)) = n; 1 element changed |
+| Specialty.db_update()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
+| Specialty.button_delete_perform()  | x, calls: Specialty.db_delete() |                      | if OK: change state | SPECIALTY_DELETE                 | SPECIALTY_LIST                                 |
+| Specialty.db_delete()              |                                 | x                    | OK                  | length(list(Specialty)) = n > 0  | length(list(Specialty)) = n-1                  |
+| Specialty.db_delete()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
 
 ![Figure Uses Cases Specialty](uml/specialty/Specialty__StateEngine-Specialty_State_Diagram.png)
 
@@ -168,10 +169,23 @@ Object Oriented Design
 | VET_LIST3         |  
 | VET_LIST4         |  
 
-| Actions  | Frontend to View | View to Backend (DB) |
-|----------|------------------|----------------------|
-| asdf()   | x                |                      |
-| fdsfsd() |                  | x                    |
+| Actions                            | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
+|------------------------------------|----------------------------------|----------------------|---------------------|-----------------------------------|-------------------------------------------------|
+| Vetinarian.button_addNew_dialog()  | x                                |                      | change state        | VET_LIST                          | VET_NEW                                         |
+| Vetinarian.button_edit_dialog()    | x                                |                      | change state        | VET_LIST                          | VET_EDIT                                        |
+| Vetinarian.button_delete_dialog()  | x                                |                      | change state        | VET_LIST                          | VET_DELETE                                      |
+| Vetinarian.cancel_and_back()       | x                                |                      | change state        | VET_NEW                           | VET_LIST                                        |
+| Vetinarian.cancel_and_back()       | x                                |                      | change state        | VET_EDIT                          | VET_LIST                                        |
+| Vetinarian.cancel_and_back()       | x                                |                      | change state        | VET_DELETE                        | VET_LIST                                        |
+| Vetinarian.button_addNew_perform() | x, calls: Vetinarian.db_addNew() |                      | if OK: change state | VET_NEW                           | VET_LIST                                        |
+| Vetinarian.db_addNew()             |                                  | x                    | OK                  | length(list(Vetinarian)) = n      | length(list(Vetinarian)) = n+1                  |
+| Vetinarian.db_addNew()             |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n      | display cause as flash message                  |
+| Vetinarian.button_update_perform() | x, calls: Vetinarian.db_update() |                      | if OK: change state | VET_EDIT                          | VET_LIST                                        |
+| Vetinarian.db_update()             |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n; 1 element changed |
+| Vetinarian.db_update()             |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
+| Vetinarian.button_delete_perform() | x, calls: Vetinarian.db_delete() |                      | if OK: change state | VET_DELETE                        | VET_LIST                                        |
+| Vetinarian.db_delete()             |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n-1                  |
+| Vetinarian.db_delete()             |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
 
 ![Figure Uses Cases Vet](uml/vet/Vet__StateEngine-Vetinarian_State_Diagram.png)
 
