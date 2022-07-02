@@ -9,7 +9,7 @@ left to right direction
 
 scale 1000 width
 
-entity OwnerView {
+class OwnerView {
 
     OwnerState currentState
 
