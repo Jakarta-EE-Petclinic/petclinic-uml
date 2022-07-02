@@ -6,6 +6,15 @@ title VetView Class Diagram
 left to right direction
 'top to bottom direction
 
+enum VetState {
+    VET_LIST_EMPTY
+    VET_LIST
+    VET_LIST_SEARCH_RESULT
+    VET_NEW
+    VET_EDIT
+    VET_DELETE
+}
+
 class VetView {
     VetState currentState
     button_addNew_dialog(): VetState
@@ -18,14 +27,6 @@ class VetView {
     button_delete_dialog(): VetState
     button_delete_perform(): VetState
     - db_delete(): boolean
-}
-
-enum VetState {
-    VET_LIST
-    VET_LIST_SEARCH_RESULT
-    VET_NEW
-    VET_EDIT
-    VET_DELETE
 }
 
 @enduml

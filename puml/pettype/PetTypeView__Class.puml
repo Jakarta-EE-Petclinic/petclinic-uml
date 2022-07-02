@@ -6,6 +6,15 @@ title PetTypeView Class Diagram
 left to right direction
 'top to bottom direction
 
+enum PetTypeState {
+    PETTYPE_LIST_EMPTY
+    PETTYPE_LIST
+    PETTYPE_LIST_SEARCH_RESULT
+    PETTYPE_NEW
+    PETTYPE_EDIT
+    PETTYPE_DELETE
+}
+
 class PetTypeView {
     PetTypeState currentState
     button_addNew_dialog(): PetTypeState
@@ -18,14 +27,6 @@ class PetTypeView {
     button_delete_dialog():PetTypeState
     button_delete_perform():PetTypeState
     - db_delete(): boolean
-}
-
-enum PetTypeState {
-    PETTYPE_LIST
-    PETTYPE_LIST_SEARCH_RESULT
-    PETTYPE_NEW
-    PETTYPE_EDIT
-    PETTYPE_DELETE
 }
 
 @enduml
