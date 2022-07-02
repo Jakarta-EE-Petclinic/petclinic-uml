@@ -6,27 +6,5 @@ title SpecialtyView Class Diagram
 left to right direction
 'top to bottom direction
 
-enum SpecialtyState {
-    SPECIALTY_LIST_EMPTY
-    SPECIALTY_LIST
-    SPECIALTY_LIST_SEARCH_RESULT
-    SPECIALTY_NEW
-    SPECIALTY_EDIT
-    SPECIALTY_DELETE
-}
-
-class SpecialtyView {
-    SpecialtyState currentState
-    button_addNew_dialog(): SpecialtyState
-    button_cancel_and_back(): SpecialtyState
-    button_addNew_perform(): SpecialtyState
-    - db_addNew(): boolean
-    button_edit_dialog(): SpecialtyState
-    button_update_perform(): SpecialtyState
-    - db_update(): boolean
-    button_delete_dialog(): SpecialtyState
-    button_delete_perform(): SpecialtyState
-    - db_delete(): boolean
-}
 
 @enduml
