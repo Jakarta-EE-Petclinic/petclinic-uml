@@ -1,0 +1,76 @@
+@startuml
+
+
+title OwnerView Class Diagram
+'https://plantuml.com/class-diagram
+
+left to right direction
+'top to bottom direction
+
+scale 1000 width
+
+
+class OwnerState {
+    OWNER_LIST
+    OWNER_NEW
+    OWNER_DETAILS
+    OWNER_EDIT
+    OWNER_DELETE
+    OWNER_PET_NEW
+    OWNER_PET_EDIT
+    OWNER_PET_DELETE
+    OWNER_PET_VISIT_NEW
+    OWNER_PET_VISIT_EDIT
+    OWNER_PET_VISIT_DELETE
+    OWNER_PET_VISIT_NEW
+    OWNER_PET_VISIT_EDIT
+    OWNER_PET_VISIT_DELETE
+}
+
+entity OwnerView {
+     String firstName
+     String lastName
+     String address
+     String houseNumber
+     String addressInfo
+     String city
+     String zipCode
+     String phoneNumber
+}
+
+entity PetView {
+    String name
+    Date dateOfBirth
+}
+
+entity VisitVisitView {
+    Date dateOfVisit
+    String description
+}
+
+class PetTypeView {
+    PetTypeState currentState
+    button_addNew_dialog(): PetTypeState
+    button_cancel_and_back(): PetTypeState
+    button_addNew_perform(): PetTypeState
+    - db_addNew(): boolean
+    button_edit_dialog(): PetTypeState
+    button_update_perform(): PetTypeState
+    - db_update(): boolean
+    button_delete_dialog():PetTypeState
+    button_delete_perform():PetTypeState
+    - db_delete(): boolean
+}
+
+enum PetTypeState {
+    PETTYPE_LIST
+    PETTYPE_NEW
+    PETTYPE_EDIT
+    PETTYPE_DELETE
+}
+
+OwnerView "one"  *--> "many"  PetView: pets
+PetView "one" *--> "many" VisitView: visits
+PetView "many"  o-->  "one" PetTypeView: petType
+
+@enduml
