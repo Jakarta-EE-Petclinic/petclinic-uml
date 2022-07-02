@@ -235,24 +235,33 @@ Object Oriented Design
 | OWNER_PET_VISIT_DELETE |
 
 
-| Actions                        | Frontend to View                 | View to Backend (DB) | outcome             | precondition                 | postcondition                              |
-|--------------------------------|----------------------------------|----------------------|---------------------|------------------------------|--------------------------------------------|
-| Owner.button_addNew_dialog()   | x                                |                      | change state        | OWNER_LIST                   | OWNER_NEW                                  |
-| Owner.button_cancel_and_back() | x                                |                      | change state        | OWNER_NEW                    | OWNER_LIST                                 |
-| Owner.button_addNew_perform()  | x, calls: Vetinarian.db_addNew() |                      | if OK: change state | OWNER_NEW                    | OWNER_LIST                                 |
-| Owner.db_addNew()              |                                  | x                    | OK                  | length(list(Owner)) = n      | length(list(Owner)) = n+1                  |
-| Owner.db_addNew()              |                                  | x                    | not OK, invalid     | length(list(Owner)) = n      | display cause as flash message             |
-| Owner.button_details_dialog()  | x                                |                      | change state        | OWNER_LIST                   | OWNER_DETAILS                              |
-| Owner.button_edit_dialog()     | x                                |                      | change state        | OWNER_DETAILS                | OWNER_EDIT                                 |
-| Owner.button_cancel_and_back() | x                                |                      | change state        | OWNER_EDIT                   | OWNER_DETAILS                              |
-| Owner.button_update_perform()  | x, calls: Vetinarian.db_update() |                      | if OK: change state | OWNER_EDIT                   | OWNER_DETAILS                              |
-| Owner.db_update()              |                                  | x                    | OK                  | length(list(Owner)) = n > 0  | length(list(Owner)) = n; 1 element changed |
-| Owner.db_update()              |                                  | x                    | not OK, invalid     | length(list(Owner)) = n >= 0 | display cause as flash message             |
-| Owner.button_delete_dialog()   | x                                |                      | change state        | OWNER_DETAILS                | OWNER_DELETE                               |
-| Owner.button_cancel_and_back() | x                                |                      | change state        | OWNER_DELETE                 | OWNER_DETAILS                              |
-| Owner.button_delete_perform()  | x, calls: Vetinarian.db_delete() |                      | if OK: change state | OWNER_DELETE                 | OWNER_DETAILS                              |
-| Owner.db_delete()              |                                  | x                    | OK                  | length(list(Owner)) = n > 0  | length(list(Owner)) = n-1                  |
-| Owner.db_delete()              |                                  | x                    | not OK, invalid     | length(list(Owner)) = n >= 0 | display cause as flash message             |
+| Actions                             | Frontend to View                 | View to Backend (DB) | outcome             | precondition                 | postcondition                              |
+|-------------------------------------|----------------------------------|----------------------|---------------------|------------------------------|--------------------------------------------|
+| Owner.button_addNew_dialog()        | x                                |                      | change state        | OWNER_LIST                   | OWNER_NEW                                  |
+| Owner.button_cancel_and_back()      | x                                |                      | change state        | OWNER_NEW                    | OWNER_LIST                                 |
+| Owner.button_addNew_perform()       | x, calls: Vetinarian.db_addNew() |                      | if OK: change state | OWNER_NEW                    | OWNER_LIST                                 |
+| Owner.db_addNew()                   |                                  | x                    | OK                  | length(list(Owner)) = n      | length(list(Owner)) = n+1                  |
+| Owner.db_addNew()                   |                                  | x                    | not OK, invalid     | length(list(Owner)) = n      | display cause as flash message             |
+| Owner.button_details_dialog()       | x                                |                      | change state        | OWNER_LIST                   | OWNER_DETAILS                              |
+| Owner.button_back_to_list()         | x                                |                      | change state        | OWNER_DETAILS                | OWNER_LIST                                 |
+| Owner.button_edit_dialog()          | x                                |                      | change state        | OWNER_DETAILS                | OWNER_EDIT                                 |
+| Owner.button_cancel_and_back()      | x                                |                      | change state        | OWNER_EDIT                   | OWNER_DETAILS                              |
+| Owner.button_update_perform()       | x, calls: Vetinarian.db_update() |                      | if OK: change state | OWNER_EDIT                   | OWNER_DETAILS                              |
+| Owner.db_update()                   |                                  | x                    | OK                  | length(list(Owner)) = n > 0  | length(list(Owner)) = n; 1 element changed |
+| Owner.db_update()                   |                                  | x                    | not OK, invalid     | length(list(Owner)) = n >= 0 | display cause as flash message             |
+| Owner.button_delete_dialog()        | x                                |                      | change state        | OWNER_DETAILS                | OWNER_DELETE                               |
+| Owner.button_cancel_and_back()      | x                                |                      | change state        | OWNER_DELETE                 | OWNER_DETAILS                              |
+| Owner.button_delete_perform()       | x, calls: Vetinarian.db_delete() |                      | if OK: change state | OWNER_DELETE                 | OWNER_DETAILS                              |
+| Owner.db_delete()                   |                                  | x                    | OK                  | length(list(Owner)) = n > 0  | length(list(Owner)) = n-1                  |
+| Owner.db_delete()                   |                                  | x                    | not OK, invalid     | length(list(Owner)) = n >= 0 | display cause as flash message             |
+| Owner.button_addNew_pet_dialog()    | x                                |                      | change state        | OWNER_DETAILS                | OWNER_PET_NEW                              |
+| Owner.button_edit_pet_dialog()      | x                                |                      | change state        | OWNER_DETAILS                | OWNER_PET_EDIT                             |
+| Owner.button_delete_pet_dialog()    | x                                |                      | change state        | OWNER_DETAILS                | OWNER_PET_DELETE                           |
+| Owner.button_addNew_visit_dialog()  | x                                |                      | change state        | OWNER_DETAILS                | OWNER_PET_VISIT_NEW                        |
+| Owner.button_edit_visit_dialog()    | x                                |                      | change state        | OWNER_DETAILS                | OWNER_PET_VISIT_EDIT                       |
+| Owner.button_delete_visit_dialog()  | x                                |                      | change state        | OWNER_DETAILS                | OWNER_PET_VISIT_DELETE                     |
+| Owner. axcv()                       | x                                |                      | change state        | a                            | c                                          |
+
 
 ### Owner State Diagram without Pet and Visits
 ![Figure Uses Cases Owner](uml/owner/Owner__StateEngine__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)

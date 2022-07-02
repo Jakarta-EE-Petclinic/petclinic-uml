@@ -22,55 +22,24 @@ class OwnerState {
     OWNER_PET_VISIT_NEW
     OWNER_PET_VISIT_EDIT
     OWNER_PET_VISIT_DELETE
-    OWNER_PET_VISIT_NEW
-    OWNER_PET_VISIT_EDIT
-    OWNER_PET_VISIT_DELETE
 }
 
 entity OwnerView {
-     String firstName
-     String lastName
-     String address
-     String houseNumber
-     String addressInfo
-     String city
-     String zipCode
-     String phoneNumber
-}
-
-entity PetView {
-    String name
-    Date dateOfBirth
-}
-
-entity VisitVisitView {
-    Date dateOfVisit
-    String description
-}
-
-class PetTypeView {
-    PetTypeState currentState
-    button_addNew_dialog(): PetTypeState
-    button_cancel_and_back(): PetTypeState
-    button_addNew_perform(): PetTypeState
-    - db_addNew(): boolean
-    button_edit_dialog(): PetTypeState
-    button_update_perform(): PetTypeState
+    button_addNew_dialog(): OwnerState
+    button_cancel_and_back(): OwnerState
+    button_addNew_perform(): OwnerState
+    -db_addNew(): boolean
+    button_details_dialog(): OwnerState
+    button_back_to_list(): OwnerState
+    button_edit_dialog(): OwnerState
+    button_cancel_and_back(): OwnerState
+    button_update_perform(): OwnerState
     - db_update(): boolean
-    button_delete_dialog():PetTypeState
-    button_delete_perform():PetTypeState
+    button_delete_dialog(): OwnerState
+    button_delete_perform(): OwnerState
     - db_delete(): boolean
 }
 
-enum PetTypeState {
-    PETTYPE_LIST
-    PETTYPE_NEW
-    PETTYPE_EDIT
-    PETTYPE_DELETE
-}
 
-OwnerView "one"  *--> "many"  PetView: pets
-PetView "one" *--> "many" VisitView: visits
-PetView "many"  o-->  "one" PetTypeView: petType
 
 @enduml
