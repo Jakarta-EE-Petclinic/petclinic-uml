@@ -14,8 +14,9 @@ package specialty {
     (Login) -> (Navigation)
     (Navigation) -> (Specialty.list)
     (Specialty.list) --> (Specialty.search)
-    (Specialty.list) ---> (Specialty.addNew)
-    (Specialty.list) ---> (Specialty.edit)
-    (Specialty.list) ---> (Specialty.delete)
+    (Specialty.list) --> (Specialty.details)
+    (Specialty.list) --> (Specialty.addNew)
+    (Specialty.details) ---> (Specialty.edit)
+    (Specialty.details) ---> (Specialty.delete)
 }
 @enduml

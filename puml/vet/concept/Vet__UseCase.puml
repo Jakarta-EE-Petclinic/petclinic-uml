@@ -14,8 +14,9 @@ package vet {
     (Login) -> (Navigation)
     (Navigation) -> (Vet.list)
     (Vet.list) --> (Vet.search)
-    (Vet.list) ---> (Vet.addNew)
-    (Vet.list) ---> (Vet.edit)
-    (Vet.list) ---> (Vet.delete)
+    (Vet.list) --> (Vet.details)
+    (Vet.list) --> (Vet.addNew)
+    (Vet.details) ---> (Vet.edit)
+    (Vet.details) ---> (Vet.delete)
 }
 @enduml

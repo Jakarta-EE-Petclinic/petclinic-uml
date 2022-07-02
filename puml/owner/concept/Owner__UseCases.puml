@@ -12,7 +12,7 @@ scale 1000 width
 User - (Login)
 package owner {
     (Login) -> (Navigation)
-    (Start) -> (Owner.search)
+    (Application.Start) -> (Owner.search)
     (Navigation) --> (Owner.list)
     (Owner.list) -> (Owner.search)
     (Owner.list) --> (Owner.addNew)
