@@ -81,5 +81,6 @@ state OWNER_NEW {
 }
 
 OWNER_LIST --> [*]
+OWNER_DETAILS --> [*]
 
 @enduml

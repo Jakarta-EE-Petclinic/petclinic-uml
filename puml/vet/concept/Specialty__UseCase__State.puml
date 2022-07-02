@@ -36,6 +36,7 @@ state SPECIALTY_DELETE {
 }
 SPECIALTY_DELETE --> SPECIALTY_DETAILS: button_delete_perform() OK
 
-SPECIALTY_DETAILS ---> [*]
+SPECIALTY_LIST -> [*]
+SPECIALTY_DETAILS -> [*]
 
 @enduml

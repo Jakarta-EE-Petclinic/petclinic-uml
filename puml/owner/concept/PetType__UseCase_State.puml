@@ -35,6 +35,7 @@ state PETTYPE_DELETE {
 }
 PETTYPE_DELETE --> PETTYPE_DETAILS: button_delete_perform() OK
 
-PETTYPE_DETAILS ---> [*]
+PETTYPE_LIST -> [*]
+PETTYPE_DETAILS -> [*]
 
 @enduml
