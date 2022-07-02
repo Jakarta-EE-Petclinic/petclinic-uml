@@ -191,7 +191,7 @@ Object Oriented Design
 
 ### VetinarianView Class
 
-![Figure Class VetView](uml/vet/implementation/VetView__Class-VetView_Class_Diagram.png)
+![Figure Class VetView](uml/vet/implementation/View__Class-VetView_Class_Diagram.png)
 
 ## Owner
 
