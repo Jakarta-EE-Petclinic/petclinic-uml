@@ -91,7 +91,7 @@ Object Oriented Design
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
-![Figure PetTypeView](uml/owner/implementation/PetTypeView__Class-PetTypeView_Class_Diagram.png)
+![Figure PetTypeView](uml/owner/implementation/View__Class-OwnerView_Class_Diagram.png)
 
 
 ## Specialty
@@ -278,7 +278,7 @@ Object Oriented Design
 
 ### OwnerView Class
 
-![Figure Class VetView](uml/owner/implementation/OwnerView__Class-OwnerView_Class_Diagram.png)
+![Figure Class VetView](uml/owner/implementation/View__Class-OwnerView_Class_Diagram.png)
 
 ## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
