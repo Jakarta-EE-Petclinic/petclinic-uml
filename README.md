@@ -49,7 +49,7 @@ Object Oriented Design
 
 ### PetType Use Case Diagram
 
-![Figure Uses Case PetType](uml/tmp/owner/concept/PetType__UseCase-PetType_Use_Case_Diagram.png)
+![Figure Uses Case PetType](uml/owner/concept/PetType__UseCase-PetType_Use_Case_Diagram.png)
 
 ### PetType State Diagram
 
@@ -67,7 +67,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Uses Cases PetType](uml/tmp/owner/concept/PetType__State-PetType_State_Diagram.png)
+![Figure Uses Cases PetType](uml/owner/concept/PetType__State-PetType_State_Diagram.png)
 
 | PetType Use Cases | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
 |-------------------|--------------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
@@ -91,14 +91,14 @@ Object Oriented Design
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
-![Figure PetTypeView](uml/tmp/owner/implementation/PetTypeView__Class-PetTypeView_Class_Diagram.png)
+![Figure PetTypeView](uml/owner/implementation/PetTypeView__Class-PetTypeView_Class_Diagram.png)
 
 
 ## Specialty
 
 ### Specialty Use Case Diagram
 
-![Figure Uses Case Specialty](uml/tmp/vet/concept/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
+![Figure Uses Case Specialty](uml/vet/concept/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
 
 ### Specialty State Diagram
 
@@ -116,7 +116,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Uses Cases Specialty](uml/tmp/vet/concept/Specialty__State-Specialty_State_Diagram.png)
+![Figure Uses Cases Specialty](uml/vet/concept/Specialty__State-Specialty_State_Diagram.png)
 
 | Specialty Use Cases | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
 |---------------------|----------------------------------------|---------------------------------|----------------------|---------------------|----------------------------------|------------------------------------------------|
@@ -141,13 +141,13 @@ Object Oriented Design
 | Specialty.delete    | SpecialtyView.db_delete()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
 
 ### SpecialtyViw Class
-![Figure Class SpecialtyView](uml/tmp/vet/implementation/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
+![Figure Class SpecialtyView](uml/vet/implementation/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
 
 ## Vetinarian
 
 ### Vetinarian Use Case Diagram
 
-![Figure Uses Cases Vet](uml/tmp/vet/concept/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
+![Figure Uses Cases Vet](uml/vet/concept/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
 
 ### Vetinarian State Diagram
 
@@ -165,7 +165,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Vetinarian_State_Diagram](uml/tmp/vet/concept/Vet__State-Vetinarian_State_Diagram.png)
+![Figure Vetinarian_State_Diagram](uml/vet/concept/Vet__State-Vetinarian_State_Diagram.png)
 
 | Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
 |-------------|-----------------------------------|----------------------------------|----------------------|---------------------|-----------------------------------|-------------------------------------------------|
@@ -191,13 +191,13 @@ Object Oriented Design
 
 ### VetinarianView Class
 
-![Figure Class VetView](uml/tmp/vet/implementation/VetView__Class-VetView_Class_Diagram.png)
+![Figure Class VetView](uml/vet/implementation/VetView__Class-VetView_Class_Diagram.png)
 
 ## Owner
 
 ### Owner Use Cases
 
-![Figure Uses Cases Owner](uml/tmp/owner/concept/Owner__UseCases-Owner_Use_Case_Diagram.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases-Owner_Use_Case_Diagram.png)
 
 ### Owner State
 
@@ -220,13 +220,13 @@ Object Oriented Design
 
 #### Owner State Diagram
 
-![Figure Uses Cases Owner](uml/tmp/owner/concept/Owner__State-Owner_State_Diagram.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__State-Owner_State_Diagram.png)
 
 #### Owner State Diagram without Pet and Visits
-![Figure Uses Cases Owner](uml/tmp/owner/concept/Owner__State__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__State__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
 
 #### Owner State Diagram of Pet and Visits
-![Figure Uses Cases Owner](uml/tmp/owner/concept/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
 
 | Use Case               | Actions                                  | Frontend to View                  | View to Backend (DB) | outcome             | precondition                  | postcondition                              |
 |------------------------|------------------------------------------|-----------------------------------|----------------------|---------------------|-------------------------------|--------------------------------------------|
@@ -278,7 +278,7 @@ Object Oriented Design
 
 ### OwnerView Class
 
-![Figure Class VetView](uml/tmp/owner/implementation/OwnerView__Class-OwnerView_Class_Diagram.png)
+![Figure Class VetView](uml/owner/implementation/OwnerView__Class-OwnerView_Class_Diagram.png)
 
 ## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
