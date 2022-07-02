@@ -44,6 +44,11 @@ package owner.oodm {
             String uuid
             String name
         }
+
+        OwnerEntity "one"  *--> "many"  PetEntity: pets
+        PetEntity "one" *--> "many" VisitEntity: visits
+        PetEntity "many"  o-->  "one" PetTypeEntity: petType
+
     }
 
     package owner.oodm.service {
@@ -51,26 +56,39 @@ package owner.oodm {
         class OwnerService {
         }
 
-        class OwnerDao {
-        }
-
         class PetService {
-        }
-
-        class PetDao {
         }
 
         class VisitService {
         }
 
-        class VisitDao {
-        }
-
         class PetTypeService {
         }
 
-        class PetTypeDao {
+        package owner.oodm.service.dao {
+
+            class OwnerDao {
+            }
+
+            class PetDao {
+            }
+
+            class VisitDao {
+            }
+
+            class PetTypeDao {
+            }
+
+            OwnerDao ..> OwnerEntity
+            PetDao ..> PetEntity
+            PetTypeDao ..> PetTypeEntity
+            VisitDao ..> VisitEntity
         }
+
+        OwnerService o--> OwnerDao
+        PetService o--> PetDao
+        PetTypeService o--> PetTypeDao
+        VisitService o--> VisitDao
     }
 
     package owner.oodm.transients {
@@ -104,30 +122,26 @@ package owner.oodm {
             Date dateOfVisit
             String notice
         }
+
+        OwnerDto "one"  *--> "many"  PetDto: pets
+        PetDto "one" *--> "many" VisitDto: visits
+        PetDto "many"  o-->  "one" PetTypeDto: petType
+
+        OwnerDto ..> OwnerService
+        PetDto ..> PetService
+        VisitDto ..> VisitService
+        PetTypeDto  ..> PetTypeService
     }
 }
 
-OwnerEntity "one"  *--> "many"  PetEntity: pets
-PetEntity "one" *--> "many" VisitEntity: visits
-PetEntity "many"  o-->  "one" PetTypeEntity: petType
 
-OwnerDao ..> OwnerEntity
-PetDao ..> PetEntity
-PetTypeDao ..> PetTypeEntity
-VisitDao ..> VisitEntity
 
-OwnerService o--> OwnerDao
-PetService o--> PetDao
-PetTypeService o--> PetTypeDao
-VisitService o--> VisitDao
 
-OwnerDto "one"  *--> "many"  PetDto: pets
-PetDto "one" *--> "many" VisitDto: visits
-PetDto "many"  o-->  "one" PetTypeDto: petType
 
-OwnerDto ..> OwnerService
-PetDto ..> PetService
-VisitDto ..> VisitService
-PetTypeDto  ..> PetTypeService
+
+
+
+
+
 
 @enduml
