@@ -25,19 +25,19 @@ class OwnerState {
 }
 
 entity OwnerView {
-    button_addNew_dialog(): OwnerState
-    button_cancel_and_back(): OwnerState
-    button_addNew_perform(): OwnerState
-    -db_addNew(): boolean
-    button_details_dialog(): OwnerState
-    button_back_to_list(): OwnerState
-    button_edit_dialog(): OwnerState
-    button_cancel_and_back(): OwnerState
-    button_update_perform(): OwnerState
-    - db_update(): boolean
-    button_delete_dialog(): OwnerState
-    button_delete_perform(): OwnerState
-    - db_delete(): boolean
+    button_owner_addNew_dialog(): OwnerState
+    button_owner_cancel_and_back(): OwnerState
+    button_owner_addNew_perform(): OwnerState
+    -db_owner_addNew(): boolean
+    button_owner_details_dialog(): OwnerState
+    button_owner_back_to_list(): OwnerState
+    button_owner_edit_dialog(): OwnerState
+    button_owner_cancel_and_back(): OwnerState
+    button_owner_update_perform(): OwnerState
+    - db_owner_update(): boolean
+    button_owner_delete_dialog(): OwnerState
+    button_owner_delete_perform(): OwnerState
+    - db_owner_delete(): boolean
 }
 
 
