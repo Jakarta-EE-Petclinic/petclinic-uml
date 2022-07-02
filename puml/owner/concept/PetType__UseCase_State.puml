@@ -1,6 +1,7 @@
 @startuml
 
-title PetType State Diagram
+title PetType Use Case State Diagram
+
 'https://plantuml.com/state-diagram
 
 left to right direction

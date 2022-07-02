@@ -1,6 +1,6 @@
 @startuml
 
-title Owner State Diagram of Pet and Visits
+title Owner Use Case State Diagram of Pet and Visits
 
 'https://plantuml.com/state-diagram
 

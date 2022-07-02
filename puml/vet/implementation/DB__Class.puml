@@ -1,6 +1,8 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+title vet.oodm Class Diagram
+
 left to right direction
 'top to bottom direction
 
