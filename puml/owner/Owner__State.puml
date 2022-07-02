@@ -15,7 +15,7 @@ OWNER_LIST --> OWNER_NEW :   button_owner_addNew_dialog()
 OWNER_NEW --> OWNER_LIST:    button_owner_cancel_and_back()
 OWNER_NEW --> OWNER_DETAILS: button_owner_addNew_perform() OK
 
-OWNER_LIST --> OWNER_DETAILS: button_owner_details_owner()
+OWNER_LIST --> OWNER_DETAILS: button_owner_details_dialog()
 OWNER_DETAILS --> OWNER_LIST: button_owner_back_to_list()
 
 OWNER_DETAILS --> OWNER_EDIT: button_owner_edit_dialog()

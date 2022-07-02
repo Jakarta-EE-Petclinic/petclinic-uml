@@ -25,19 +25,47 @@ class OwnerState {
 }
 
 entity OwnerView {
-    button_owner_addNew_dialog(): OwnerState
-    button_owner_cancel_and_back(): OwnerState
-    button_owner_addNew_perform(): OwnerState
-    -db_owner_addNew(): boolean
     button_owner_details_dialog(): OwnerState
     button_owner_back_to_list(): OwnerState
+
+    button_owner_addNew_dialog(): OwnerState
+    button_owner_addNew_perform(): OwnerState
+    -db_owner_addNew(): boolean
+
     button_owner_edit_dialog(): OwnerState
     button_owner_cancel_and_back(): OwnerState
     button_owner_update_perform(): OwnerState
     - db_owner_update(): boolean
+
     button_owner_delete_dialog(): OwnerState
     button_owner_delete_perform(): OwnerState
     - db_owner_delete(): boolean
+
+    button_pet_addNew_dialog(): OwnerState
+    button_pet_cancel_and_back(): OwnerState
+    button_pet_addNew_perform(): OwnerState
+    - db_pet_addNew(): boolean
+
+    button_pet_edit_dialog(): OwnerState
+    button_pet_update_perform(): OwnerState
+    - db_pet_update(): boolean
+
+    button_pet_delete_dialog(): OwnerState
+    button_pet_delete_perform(): OwnerStates
+    - db_pet_delete(): boolean
+
+    button_visit_addNew_dialog(): OwnerState
+    button_visit_cancel_and_back(): OwnerState
+    button_visit_addNew_perform(): OwnerState
+    - db_visit_addNew(): boolean
+
+    button_visit_edit_dialog(): OwnerState
+    button_visit_update_perform(): OwnerState
+   - db_visit_update(): boolean
+
+    button_visit_delete_dialog(): OwnerState
+    button_visit_delete_perform(): OwnerState
+    - db_visit_delete(): boolean
 }
 
 
