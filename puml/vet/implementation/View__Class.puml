@@ -9,27 +9,36 @@ left to right direction
 
 class VetView {
     VetState currentState
-    button_addNew_dialog(): VetState
+
     button_cancel_and_back(): VetState
+
+    button_addNew_dialog(): VetState
     button_addNew_perform(): VetState
     - db_addNew(): boolean
+
     button_edit_dialog(): VetState
     button_update_perform(): VetState
     - db_update(): boolean
+
     button_delete_dialog(): VetState
     button_delete_perform(): VetState
     - db_delete(): boolean
 }
 
 class SpecialtyView {
+
     SpecialtyState currentState
-    button_addNew_dialog(): SpecialtyState
+
     button_cancel_and_back(): SpecialtyState
+
+    button_addNew_dialog(): SpecialtyState
     button_addNew_perform(): SpecialtyState
     - db_addNew(): boolean
+
     button_edit_dialog(): SpecialtyState
     button_update_perform(): SpecialtyState
     - db_update(): boolean
+
     button_delete_dialog(): SpecialtyState
     button_delete_perform(): SpecialtyState
     - db_delete(): boolean

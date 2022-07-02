@@ -9,8 +9,77 @@ left to right direction
 
 scale 1000 width
 
+entity OwnerView {
 
-class OwnerState {
+    OwnerState currentState
+
+    button_owner_cancel_and_back(): OwnerState
+
+    button_owner_details_dialog(): OwnerState
+    button_owner_back_to_list(): OwnerState
+
+    button_owner_addNew_dialog(): OwnerState
+    button_owner_addNew_perform(): OwnerState
+    -db_owner_addNew(): boolean
+
+    button_owner_edit_dialog(): OwnerState
+    button_owner_update_perform(): OwnerState
+    - db_owner_update(): boolean
+
+    button_owner_delete_dialog(): OwnerState
+    button_owner_delete_perform(): OwnerState
+    - db_owner_delete(): boolean
+
+    button_pet_cancel_and_back(): OwnerState
+
+    button_pet_addNew_dialog(): OwnerState
+    button_pet_addNew_perform(): OwnerState
+    - db_pet_addNew(): boolean
+
+    button_pet_edit_dialog(): OwnerState
+    button_pet_update_perform(): OwnerState
+    - db_pet_update(): boolean
+
+    button_pet_delete_dialog(): OwnerState
+    button_pet_delete_perform(): OwnerStates
+    - db_pet_delete(): boolean
+
+    button_visit_cancel_and_back(): OwnerState
+
+    button_visit_addNew_dialog(): OwnerState
+    button_visit_addNew_perform(): OwnerState
+    - db_visit_addNew(): boolean
+
+    button_visit_edit_dialog(): OwnerState
+    button_visit_update_perform(): OwnerState
+   - db_visit_update(): boolean
+
+    button_visit_delete_dialog(): OwnerState
+    button_visit_delete_perform(): OwnerState
+    - db_visit_delete(): boolean
+}
+
+class PetTypeView {
+
+    PetTypeState currentState
+
+    button_cancel_and_back(): PetTypeState
+
+    button_addNew_dialog(): PetTypeState
+    button_addNew_perform(): PetTypeState
+    - db_addNew(): boolean
+
+    button_edit_dialog(): PetTypeState
+    button_update_perform(): PetTypeState
+    - db_update(): boolean
+
+    button_delete_dialog():PetTypeState
+    button_delete_perform():PetTypeState
+    - db_delete(): boolean
+}
+
+
+enum OwnerState {
     OWNER_LIST_EMPTY
     OWNER_LIST
     OWNER_LIST_SEARCH_RESULT
@@ -26,51 +95,13 @@ class OwnerState {
     OWNER_PET_VISIT_DELETE
 }
 
-entity OwnerView {
-
-    OwnerState currentState
-
-    button_owner_details_dialog(): OwnerState
-    button_owner_back_to_list(): OwnerState
-
-    button_owner_addNew_dialog(): OwnerState
-    button_owner_addNew_perform(): OwnerState
-    -db_owner_addNew(): boolean
-
-    button_owner_edit_dialog(): OwnerState
-    button_owner_cancel_and_back(): OwnerState
-    button_owner_update_perform(): OwnerState
-    - db_owner_update(): boolean
-
-    button_owner_delete_dialog(): OwnerState
-    button_owner_delete_perform(): OwnerState
-    - db_owner_delete(): boolean
-
-    button_pet_addNew_dialog(): OwnerState
-    button_pet_cancel_and_back(): OwnerState
-    button_pet_addNew_perform(): OwnerState
-    - db_pet_addNew(): boolean
-
-    button_pet_edit_dialog(): OwnerState
-    button_pet_update_perform(): OwnerState
-    - db_pet_update(): boolean
-
-    button_pet_delete_dialog(): OwnerState
-    button_pet_delete_perform(): OwnerStates
-    - db_pet_delete(): boolean
-
-    button_visit_addNew_dialog(): OwnerState
-    button_visit_cancel_and_back(): OwnerState
-    button_visit_addNew_perform(): OwnerState
-    - db_visit_addNew(): boolean
-
-    button_visit_edit_dialog(): OwnerState
-    button_visit_update_perform(): OwnerState
-   - db_visit_update(): boolean
-
-    button_visit_delete_dialog(): OwnerState
-    button_visit_delete_perform(): OwnerState
-    - db_visit_delete(): boolean
+enum PetTypeState {
+    PETTYPE_LIST_EMPTY
+    PETTYPE_LIST
+    PETTYPE_LIST_SEARCH_RESULT
+    PETTYPE_NEW
+    PETTYPE_EDIT
+    PETTYPE_DELETE
 }
 
 
