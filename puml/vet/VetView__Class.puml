@@ -22,6 +22,7 @@ class VetView {
 
 enum VetState {
     VET_LIST
+    VET_LIST_SEARCH_RESULT
     VET_NEW
     VET_EDIT
     VET_DELETE

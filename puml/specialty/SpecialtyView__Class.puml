@@ -22,6 +22,7 @@ class SpecialtyView {
 
 enum SpecialtyState {
     SPECIALTY_LIST
+    SPECIALTY_LIST_SEARCH_RESULT
     SPECIALTY_NEW
     SPECIALTY_EDIT
     SPECIALTY_DELETE
