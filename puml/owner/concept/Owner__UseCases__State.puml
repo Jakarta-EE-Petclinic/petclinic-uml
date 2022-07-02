@@ -11,12 +11,12 @@ scale 1000 width
 
 [*] --> OWNER_LIST
 
+OWNER_LIST --> OWNER_DETAILS: button_owner_details_dialog()
+OWNER_DETAILS --> OWNER_LIST: button_owner_back_to_list()
+
 OWNER_LIST --> OWNER_NEW :   button_owner_addNew_dialog()
 OWNER_NEW --> OWNER_LIST:    button_owner_cancel_and_back()
 OWNER_NEW --> OWNER_DETAILS: button_owner_addNew_perform() OK
-
-OWNER_LIST --> OWNER_DETAILS: button_owner_details_dialog()
-OWNER_DETAILS --> OWNER_LIST: button_owner_back_to_list()
 
 OWNER_DETAILS --> OWNER_EDIT: button_owner_edit_dialog()
 OWNER_EDIT --> OWNER_DETAILS: button_owner_cancel_and_back()
@@ -28,41 +28,47 @@ OWNER_DELETE --> OWNER_DETAILS: button_owner_delete_perform() OK
 
 state OWNER_DETAILS {
 
-    [*] --> OWNER_PET_NEW: button_pet_addNew_dialog()
-    [*] --> OWNER_PET_EDIT: button_pet_edit_dialog()
-    [*] --> OWNER_PET_DELETE: button_pet_delete_dialog()
-
-    [*] --> OWNER_PET_VISIT_NEW: button_visit_addNew_dialog()
-    [*] --> OWNER_PET_VISIT_EDIT: button_visit_edit_dialog()
-    [*] --> OWNER_PET_VISIT_DELETE: button_visit_delete_dialog()
-
-    OWNER_PET_NEW --> [*] : db_pet_addNew() OK
-    OWNER_PET_EDIT --> [*] : db_pet_update() OK
-    OWNER_PET_DELETE --> [*]: db_pet_delete() OK
-
-    OWNER_PET_VISIT_NEW --> [*] : db_visit_addNew() OK
-    OWNER_PET_VISIT_EDIT --> [*] : db_visit_update() OK
-    OWNER_PET_VISIT_DELETE --> [*]: db_visit_delete() OK
-
+    [*] --> OWNER_PET_NEW: button_addNew_pet()
     state OWNER_PET_NEW {
-        OWNER_PET_NEW --> OWNER_PET_NEW : button_pet_addNew_perform() not OK, invalid
+        OWNER_PET_NEW --> OWNER_PET_NEW : pet_addNew() not OK, invalid
     }
-    state OWNER_PET_EDIT {
-        OWNER_PET_EDIT --> OWNER_PET_EDIT : button_pet_update_perform() not OK, invalid
-    }
-    state OWNER_PET_DELETE {
-        OWNER_PET_DELETE --> OWNER_PET_DELETE: button_pet_delete_perform() not OK, invalid
-    }
+    OWNER_PET_NEW --> [*] : pet_addNew() OK
 
+
+    [*] --> OWNER_PET_EDIT: button_edit_pet()
+    state OWNER_PET_EDIT {
+        OWNER_PET_EDIT --> OWNER_PET_EDIT : pet_update() not OK, invalid
+    }
+    OWNER_PET_EDIT --> [*] : pet_update() OK
+
+
+    [*] --> OWNER_PET_DELETE: button_delete_pet()
+    state OWNER_PET_DELETE {
+        OWNER_PET_DELETE --> OWNER_PET_DELETE: pet_delete() not OK, invalid
+    }
+    OWNER_PET_DELETE --> [*]: pet_delete() OK
+
+
+    [*] --> OWNER_PET_VISIT_NEW: button_addNew_visit()
     state OWNER_PET_VISIT_NEW {
-        OWNER_PET_VISIT_NEW --> OWNER_PET_VISIT_NEW : button_visit_addNew_perform() not OK, invalid
+        OWNER_PET_VISIT_NEW --> OWNER_PET_VISIT_NEW : visit_addNew() not OK, invalid
     }
+    OWNER_PET_VISIT_NEW --> [*] : pet_visit_addNew() OK
+
+
+    [*] --> OWNER_PET_VISIT_EDIT: button_edit_visit()
     state OWNER_PET_VISIT_EDIT {
-        OWNER_PET_VISIT_EDIT --> OWNER_PET_VISIT_EDIT : button_visit_update_perform() not OK, invalid
+        OWNER_PET_VISIT_EDIT --> OWNER_PET_VISIT_EDIT : visit_update() not OK, invalid
     }
+    OWNER_PET_VISIT_EDIT --> [*] : pet_visit_update() OK
+
+
+    [*] --> OWNER_PET_VISIT_DELETE: button_delete_visit()
     state OWNER_PET_VISIT_DELETE {
-        OWNER_PET_VISIT_DELETE --> OWNER_PET_VISIT_DELETE: button_visit_delete_perform() not OK, invalid
+        OWNER_PET_VISIT_DELETE --> OWNER_PET_VISIT_DELETE: visit_delete() not OK, invalid
     }
+    OWNER_PET_VISIT_DELETE --> [*]: pet_visit_delete() OK
+
 }
 state OWNER_EDIT {
     OWNER_EDIT --> OWNER_EDIT: button_owner_addNew_perform() not OK, invalid
