@@ -278,7 +278,7 @@ Object Oriented Design
 
 ### OwnerView Class
 
-![Figure Class VetView](uml/owner/implementattion/OwnerView__Class-OwnerView_Class_Diagram.png)
+![Figure Class VetView](uml/owner/implementation/OwnerView__Class-OwnerView_Class_Diagram.png)
 
 ## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
