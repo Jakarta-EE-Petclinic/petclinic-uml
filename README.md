@@ -141,7 +141,7 @@ Object Oriented Design
 | Specialty.delete    | SpecialtyView.db_delete()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
 
 ### SpecialtyViw Class
-![Figure Class SpecialtyView](uml/vet/implementation/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
+![Figure Class SpecialtyView](uml/vet/implementation/View__Class-SpecialtyView_Class_Diagram.png)
 
 ## Vetinarian
 
