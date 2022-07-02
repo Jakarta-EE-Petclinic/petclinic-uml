@@ -12,6 +12,7 @@ scale 1000 width
 
 class OwnerState {
     OWNER_LIST
+    OWNER_LIST_SEARCH_RESULT
     OWNER_NEW
     OWNER_DETAILS
     OWNER_EDIT
@@ -25,6 +26,9 @@ class OwnerState {
 }
 
 entity OwnerView {
+
+    OwnerState currentState
+
     button_owner_details_dialog(): OwnerState
     button_owner_back_to_list(): OwnerState
 

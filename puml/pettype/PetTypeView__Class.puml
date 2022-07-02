@@ -22,6 +22,7 @@ class PetTypeView {
 
 enum PetTypeState {
     PETTYPE_LIST
+    PETTYPE_LIST_SEARCH_RESULT
     PETTYPE_NEW
     PETTYPE_EDIT
     PETTYPE_DELETE
