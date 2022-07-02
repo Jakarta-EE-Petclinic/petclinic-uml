@@ -98,7 +98,7 @@ Object Oriented Design
 
 ### Specialty Use Case Diagram
 
-![Figure Uses Case Specialty](uml/specialty/concept/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
+![Figure Uses Case Specialty](uml/tmp/vet/concept/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
 
 ### Specialty State Diagram
 
@@ -116,7 +116,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Uses Cases Specialty](uml/specialty/concept/Specialty__State-Specialty_State_Diagram.png)
+![Figure Uses Cases Specialty](uml/tmp/vet/concept/Specialty__State-Specialty_State_Diagram.png)
 
 | Specialty Use Cases | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
 |---------------------|----------------------------------------|---------------------------------|----------------------|---------------------|----------------------------------|------------------------------------------------|
@@ -141,13 +141,13 @@ Object Oriented Design
 | Specialty.delete    | SpecialtyView.db_delete()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
 
 ### SpecialtyViw Class
-![Figure Class SpecialtyView](uml/specialty/implementation/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
+![Figure Class SpecialtyView](uml/tmp/vet/implementation/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
 
 ## Vetinarian
 
 ### Vetinarian Use Case Diagram
 
-![Figure Uses Cases Vet](uml/vet/concept/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
+![Figure Uses Cases Vet](uml/tmp/vet/concept/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
 
 ### Vetinarian State Diagram
 
@@ -165,7 +165,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Vetinarian_State_Diagram](uml/vet/concept/Vet__State-Vetinarian_State_Diagram.png)
+![Figure Vetinarian_State_Diagram](uml/tmp/vet/concept/Vet__State-Vetinarian_State_Diagram.png)
 
 | Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
 |-------------|-----------------------------------|----------------------------------|----------------------|---------------------|-----------------------------------|-------------------------------------------------|
@@ -191,7 +191,7 @@ Object Oriented Design
 
 ### VetinarianView Class
 
-![Figure Class VetView](uml/vet/implementation/VetView__Class-VetView_Class_Diagram.png)
+![Figure Class VetView](uml/tmp/vet/implementation/VetView__Class-VetView_Class_Diagram.png)
 
 ## Owner
 
