@@ -1,14 +1,15 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-title VetView Class Diagram
+title Vet and Specialty View Class Diagram
 
 left to right direction
 'top to bottom direction
 
 
 class VetView {
-    VetState currentState
+
+    - VetState currentState
 
     button_cancel_and_back(): VetState
 
@@ -27,7 +28,7 @@ class VetView {
 
 class SpecialtyView {
 
-    SpecialtyState currentState
+    - SpecialtyState currentState
 
     button_cancel_and_back(): SpecialtyState
 
