@@ -241,49 +241,49 @@ Object Oriented Design
 | OWNER_PET_VISIT_DELETE |
 
 
-| Actions                              | Frontend to View                  | View to Backend (DB) | outcome             | precondition                 | postcondition                              |
-|--------------------------------------|-----------------------------------|----------------------|---------------------|------------------------------|--------------------------------------------|
-| Owner.button_owner_addNew_dialog()   | x                                 |                      | change state        | OWNER_LIST                   | OWNER_NEW                                  |
-| Owner.button_owner_cancel_and_back() | x                                 |                      | change state        | OWNER_NEW                    | OWNER_LIST                                 |
-| Owner.button_owner_addNew_perform()  | x, calls: Owner.db_owner_addNew() |                      | if OK: change state | OWNER_NEW                    | OWNER_LIST                                 |
-| Owner.db_owner_addNew()              |                                   | x                    | OK                  | length(list(Owner)) = n      | length(list(Owner)) = n+1                  |
-| Owner.db_owner_addNew()              |                                   | x                    | not OK, invalid     | length(list(Owner)) = n      | display cause as flash message             |
-| Owner.button_owner_details_dialog()  | x                                 |                      | change state        | OWNER_LIST                   | OWNER_DETAILS                              |
-| Owner.button_owner_back_to_list()    | x                                 |                      | change state        | OWNER_DETAILS                | OWNER_LIST                                 |
-| Owner.button_owner_edit_dialog()     | x                                 |                      | change state        | OWNER_DETAILS                | OWNER_EDIT                                 |
-| Owner.button_owner_cancel_and_back() | x                                 |                      | change state        | OWNER_EDIT                   | OWNER_DETAILS                              |
-| Owner.button_owner_update_perform()  | x, calls: Owner.db_owner_update() |                      | if OK: change state | OWNER_EDIT                   | OWNER_DETAILS                              |
-| Owner.db_owner_update()              |                                   | x                    | OK                  | length(list(Owner)) = n > 0  | length(list(Owner)) = n; 1 element changed |
-| Owner.db_owner_update()              |                                   | x                    | not OK, invalid     | length(list(Owner)) = n >= 0 | display cause as flash message             |
-| Owner.button_owner_delete_dialog()   | x                                 |                      | change state        | OWNER_DETAILS                | OWNER_DELETE                               |
-| Owner.button_owner_cancel_and_back() | x                                 |                      | change state        | OWNER_DELETE                 | OWNER_DETAILS                              |
-| Owner.button_owner_delete_perform()  | x, calls: Owner.db_owner_delete() |                      | if OK: change state | OWNER_DELETE                 | OWNER_DETAILS                              |
-| Owner.db_owner_delete()              |                                   | x                    | OK                  | length(list(Owner)) = n > 0  | length(list(Owner)) = n-1                  |
-| Owner.db_owner_delete()              |                                   | x                    | not OK, invalid     | length(list(Owner)) = n >= 0 | display cause as flash message             |
-| Owner.button_pet_addNew_dialog()     | x                                 |                      | change state        | OWNER_DETAILS                | OWNER_PET_NEW                              |
-| Owner.button_pet_edit_dialog()       | x                                 |                      | change state        | OWNER_DETAILS                | OWNER_PET_EDIT                             |
-| Owner.button_pet_delete_dialog()     |                                   |                      | change state        | OWNER_DETAILS                | OWNER_PET_DELETE                           |
-| Owner.button_visit_addNew_dialog()   | x                                 |                      | change state        | OWNER_DETAILS                | OWNER_PET_VISIT_NEW                        |
-| Owner.button_visit_edit_dialog()     |                                   |                      | change state        | OWNER_DETAILS                | OWNER_PET_VISIT_EDIT                       |
-| Owner.button_visit_delete_dialog()   |                                   |                      | change state        | OWNER_DETAILS                | OWNER_PET_VISIT_DELETE                     |
-| Owner.button_pet_addNew_perform()    | x, calls: Owner.db_pet_addNew()   |                      | change state        | a                            | c                                          |
-| Owner.db_pet_addNew()                |                                   | x                    | OK                  | length(list(Pet)) = n        | length(list(Pet)) = n+1                    |
-| Owner.db_pet_addNew()                |                                   | x                    | not OK, invalid     | length(list(Pet)) = n        | display cause as flash message             |
-| Owner.button_pet_update_perform()    | x, calls: Owner.db_pet_update()   |                      | change state        | a                            | c                                          |
-| Owner.db_pet_update()                |                                   | x                    | OK                  | length(list(Pet)) = n        | length(list(Pet)) = n; 1 element changed   |
-| Owner.db_pet_update()                |                                   | x                    | not OK, invalid     | length(list(Pet)) = n        | display cause as flash message             |
-| Owner.button_pet_delete_perform()    | x, calls: Owner.db_pet_delete()   |                      | change state        | a                            | c                                          |
-| Owner.db_pet_delete()                |                                   | x                    | OK                  | length(list(Pet)) = n > 0    | length(list(Pet)) = n-1                    |
-| Owner.db_pet_delete()                |                                   | x                    | not OK, invalid     | length(list(Pet)) = n >= 0   | display cause as flash message             |
-| Owner.button_visit_addNew_perform()  | x, calls: Owner.db_visit_addNew() |                      | change state        | a                            | c                                          |
-| Owner.db_visit_addNew()              |                                   | x                    | OK                  | length(list(Visit)) = n      | length(list(Visit)) = n+1                  |
-| Owner.db_visit_addNew()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n      | display cause as flash message             |
-| Owner.button_visit_update_perform()  | x, calls: Owner.db_visit_update() |                      | change state        | a                            | c                                          |
-| Owner.db_visit_update()              |                                   | x                    | OK                  | length(list(Visit)) = n      | length(list(Visit)) = n; 1 element changed |
-| Owner.db_visit_update()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n      | display cause as flash message             |
-| Owner.button_visit_delete_perform()  | x, calls: Owner.db_visit_delete() |                      | change state        | a                            | c                                          |
-| Owner.db_visit_delete()              |                                   | x                    | OK                  | length(list(Visit)) = n > 0  | length(list(Visit)) = n-1                  |
-| Owner.db_visit_delete()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n >= 0 | display cause as flash message             |
+| Actions                              | Frontend to View                  | View to Backend (DB) | outcome             | precondition                  | postcondition                              |
+|--------------------------------------|-----------------------------------|----------------------|---------------------|-------------------------------|--------------------------------------------|
+| Owner.button_owner_addNew_dialog()   | x                                 |                      | change state        | OWNER_LIST                    | OWNER_NEW                                  |
+| Owner.button_owner_cancel_and_back() | x                                 |                      | change state        | OWNER_NEW                     | OWNER_LIST                                 |
+| Owner.button_owner_addNew_perform()  | x, calls: Owner.db_owner_addNew() |                      | if OK: change state | OWNER_NEW                     | OWNER_LIST                                 |
+| Owner.db_owner_addNew()              |                                   | x                    | OK                  | length(list(Owner)) = n       | length(list(Owner)) = n+1                  |
+| Owner.db_owner_addNew()              |                                   | x                    | not OK, invalid     | length(list(Owner)) = n       | display cause as flash message             |
+| Owner.button_owner_details_dialog()  | x                                 |                      | change state        | OWNER_LIST                    | OWNER_DETAILS                              |
+| Owner.button_owner_back_to_list()    | x                                 |                      | change state        | OWNER_DETAILS                 | OWNER_LIST                                 |
+| Owner.button_owner_edit_dialog()     | x                                 |                      | change state        | OWNER_DETAILS                 | OWNER_EDIT                                 |
+| Owner.button_owner_cancel_and_back() | x                                 |                      | change state        | OWNER_EDIT                    | OWNER_DETAILS                              |
+| Owner.button_owner_update_perform()  | x, calls: Owner.db_owner_update() |                      | if OK: change state | OWNER_EDIT                    | OWNER_DETAILS                              |
+| Owner.db_owner_update()              |                                   | x                    | OK                  | length(list(Owner)) = n > 0   | length(list(Owner)) = n; 1 element changed |
+| Owner.db_owner_update()              |                                   | x                    | not OK, invalid     | length(list(Owner)) = n >= 0  | display cause as flash message             |
+| Owner.button_owner_delete_dialog()   | x                                 |                      | change state        | OWNER_DETAILS                 | OWNER_DELETE                               |
+| Owner.button_owner_cancel_and_back() | x                                 |                      | change state        | OWNER_DELETE                  | OWNER_DETAILS                              |
+| Owner.button_owner_delete_perform()  | x, calls: Owner.db_owner_delete() |                      | if OK: change state | OWNER_DELETE                  | OWNER_DETAILS                              |
+| Owner.db_owner_delete()              |                                   | x                    | OK                  | length(list(Owner)) = n > 0   | length(list(Owner)) = n-1                  |
+| Owner.db_owner_delete()              |                                   | x                    | not OK, invalid     | length(list(Owner)) = n >= 0  | display cause as flash message             |
+| Owner.button_pet_addNew_dialog()     | x                                 |                      | change state        | OWNER_DETAILS                 | OWNER_PET_NEW                              |
+| Owner.button_pet_edit_dialog()       | x                                 |                      | change state        | OWNER_DETAILS                 | OWNER_PET_EDIT                             |
+| Owner.button_pet_delete_dialog()     |                                   |                      | change state        | OWNER_DETAILS                 | OWNER_PET_DELETE                           |
+| Owner.button_visit_addNew_dialog()   | x                                 |                      | change state        | OWNER_DETAILS                 | OWNER_PET_VISIT_NEW                        |
+| Owner.button_visit_edit_dialog()     |                                   |                      | change state        | OWNER_DETAILS                 | OWNER_PET_VISIT_EDIT                       |
+| Owner.button_visit_delete_dialog()   |                                   |                      | change state        | OWNER_DETAILS                 | OWNER_PET_VISIT_DELETE                     |
+| Owner.button_pet_addNew_perform()    | x, calls: Owner.db_pet_addNew()   |                      | change state        | OWNER_PET_NEW                 | OWNER_DETAILS                              |
+| Owner.db_pet_addNew()                |                                   | x                    | OK                  | length(list(Pet)) = n         | length(list(Pet)) = n+1                    |
+| Owner.db_pet_addNew()                |                                   | x                    | not OK, invalid     | length(list(Pet)) = n         | display cause as flash message             |
+| Owner.button_pet_update_perform()    | x, calls: Owner.db_pet_update()   |                      | change state        | OWNER_PET_EDIT                | OWNER_DETAILS                              |
+| Owner.db_pet_update()                |                                   | x                    | OK                  | length(list(Pet)) = n         | length(list(Pet)) = n; 1 element changed   |
+| Owner.db_pet_update()                |                                   | x                    | not OK, invalid     | length(list(Pet)) = n         | display cause as flash message             |
+| Owner.button_pet_delete_perform()    | x, calls: Owner.db_pet_delete()   |                      | change state        | OWNER_PET_DELETE              | OWNER_DETAILS                              |
+| Owner.db_pet_delete()                |                                   | x                    | OK                  | length(list(Pet)) = n > 0     | length(list(Pet)) = n-1                    |
+| Owner.db_pet_delete()                |                                   | x                    | not OK, invalid     | length(list(Pet)) = n >= 0    | display cause as flash message             |
+| Owner.button_visit_addNew_perform()  | x, calls: Owner.db_visit_addNew() |                      | change state        | OWNER_PET_VISIT_NEW           | OWNER_DETAILS                              |
+| Owner.db_visit_addNew()              |                                   | x                    | OK                  | length(list(Visit)) = n       | length(list(Visit)) = n+1                  |
+| Owner.db_visit_addNew()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n       | display cause as flash message             |
+| Owner.button_visit_update_perform()  | x, calls: Owner.db_visit_update() |                      | change state        | OWNER_PET_VISIT_EDIT          | OWNER_DETAILS                              |
+| Owner.db_visit_update()              |                                   | x                    | OK                  | length(list(Visit)) = n       | length(list(Visit)) = n; 1 element changed |
+| Owner.db_visit_update()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n       | display cause as flash message             |
+| Owner.button_visit_delete_perform()  | x, calls: Owner.db_visit_delete() |                      | change state        | OWNER_PET_VISIT_DELETE        | OWNER_DETAILS                              |
+| Owner.db_visit_delete()              |                                   | x                    | OK                  | length(list(Visit)) = n > 0   | length(list(Visit)) = n-1                  |
+| Owner.db_visit_delete()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n >= 0  | display cause as flash message             |
 
 ![Figure Class VetView](uml/owner/OwnerView__Class-OwnerView_Class_Diagram.png)
 
