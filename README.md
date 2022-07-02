@@ -147,7 +147,7 @@ Object Oriented Design
 
 ### Vetinarian Use Case Diagram
 
-![Figure Uses Cases Vet](uml/vet/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
+![Figure Uses Cases Vet](uml/vet/concept/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
 
 ### Vetinarian State Diagram
 
@@ -165,7 +165,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Vetinarian_State_Diagram](uml/vet/Vet__State-Vetinarian_State_Diagram.png)
+![Figure Vetinarian_State_Diagram](uml/vet/concept/Vet__State-Vetinarian_State_Diagram.png)
 
 | Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
 |-------------|-----------------------------------|----------------------------------|----------------------|---------------------|-----------------------------------|-------------------------------------------------|
@@ -191,7 +191,7 @@ Object Oriented Design
 
 ### VetinarianView Class
 
-![Figure Class VetView](uml/vet/VetView__Class-VetView_Class_Diagram.png)
+![Figure Class VetView](uml/vet/implementation/VetView__Class-VetView_Class_Diagram.png)
 
 ## Owner
 
