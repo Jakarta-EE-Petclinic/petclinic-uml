@@ -215,7 +215,13 @@ Object Oriented Design
 
 ### Owner State Diagram
 
-![Figure Uses Cases Owner](uml/owner/Owner__StateEngine-Owner_State_Diagram.png)
+![Figure Uses Cases Owner](uml/owner/Owner__State-Owner_State_Diagram.png)
+
+#### Owner State Diagram without Pet and Visits
+![Figure Uses Cases Owner](uml/owner/Owner__State__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
+
+#### Owner State Diagram of Pet and Visits
+![Figure Uses Cases Owner](uml/owner/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
 
 | Owner States           |
 |------------------------|
@@ -279,13 +285,7 @@ Object Oriented Design
 | Owner.db_visit_delete()              |                                   | x                    | OK                  | length(list(Visit)) = n > 0  | length(list(Visit)) = n-1                  |
 | Owner.db_visit_delete()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n >= 0 | display cause as flash message             |
 
-### Owner State Diagram without Pet and Visits
-![Figure Uses Cases Owner](uml/owner/Owner__StateEngine__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
-
-## TODO: more to come here
-
-### Owner State Diagram of Pet and Visits
-![Figure Uses Cases Owner](uml/owner/Owner__StateEngine__details-Owner_State_Diagram_of_Pet_and_Visits.png)
+![Figure Class VetView](uml/owner/OwnerView__Class-OwnerView_Class_Diagram.png)
 
 ## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
