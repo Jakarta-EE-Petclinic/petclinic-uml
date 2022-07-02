@@ -197,7 +197,7 @@ Object Oriented Design
 
 ### Owner Use Cases
 
-![Figure Uses Cases Owner](uml/owner/Owner__UseCases-Owner_Use_Case_Diagram.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases-Owner_Use_Case_Diagram.png)
 
 ### Owner State
 
@@ -220,13 +220,13 @@ Object Oriented Design
 
 #### Owner State Diagram
 
-![Figure Uses Cases Owner](uml/owner/Owner__State-Owner_State_Diagram.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__State-Owner_State_Diagram.png)
 
 #### Owner State Diagram without Pet and Visits
-![Figure Uses Cases Owner](uml/owner/Owner__State__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__State__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
 
 #### Owner State Diagram of Pet and Visits
-![Figure Uses Cases Owner](uml/owner/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
 
 | Use Case               | Actions                                  | Frontend to View                  | View to Backend (DB) | outcome             | precondition                  | postcondition                              |
 |------------------------|------------------------------------------|-----------------------------------|----------------------|---------------------|-------------------------------|--------------------------------------------|
@@ -278,7 +278,7 @@ Object Oriented Design
 
 ### OwnerView Class
 
-![Figure Class VetView](uml/owner/OwnerView__Class-OwnerView_Class_Diagram.png)
+![Figure Class VetView](uml/owner/implementattion/OwnerView__Class-OwnerView_Class_Diagram.png)
 
 ## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
