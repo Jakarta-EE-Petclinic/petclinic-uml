@@ -44,34 +44,29 @@ Object Oriented Design
 
 ![Figure Uses Cases Petclinic](uml/Use_Cases-Petclinic_Use_Case_Diagram.png)
 
+
 ## PetType 
 
 ### PetType Use Case Diagram
-
-| PetType Use Cases |
-|-------------------|
-| PetType.list      |
-| PetType.search    |
-| PetType.addNew    |
-| PetType.edit      |
-| PetType.delete    | 
 
 ![Figure Uses Case PetType](uml/pettype/PetType__UseCase-PetType_Use_Case_Diagram.png)
 
 ### PetType State Diagram
 
+| PetType States   | PetType Use Cases |
+|------------------|-------------------|
+| PetType.list *   | PETTYPE_LIST      |
+| PetType.search * | PETTYPE_LIST      |
+| PetType.addNew   | PETTYPE_NEW       |
+| PetType.edit     | PETTYPE_EDIT      |
+| PetType.delete   | PETTYPE_DELETE    | 
+| PetType.list     | PETTYPE_LIST2     |
+| PetType.list     | PETTYPE_LIST3     |
+| PetType.list     | PETTYPE_LIST4     |
+
+*) TODO
+
 ![Figure Uses Cases PetType](uml/pettype/PetType__State-PetType_State_Diagram.png)
-
-| PetType States | PetType Use Cases |
-|----------------|-------------------|
-| PETTYPE_LIST   | PetType.list      |
-| PETTYPE_NEW    | PetType.addNew    |
-| PETTYPE_EDIT   | PetType.edit      |
-| PETTYPE_DELETE | PetType.delete    | 
-| PETTYPE_LIST2  | PetType.list      |
-| PETTYPE_LIST3  | PetType.list      |
-| PETTYPE_LIST4  | PetType.list      |
-
 
 | PetType Use Cases | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
 |-------------------|--------------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
@@ -98,30 +93,24 @@ Object Oriented Design
 
 ### Specialty Use Case Diagram
 
-| Specialty Use Cases |
-|---------------------|
-| Specialty.list      |
-| Specialty.search    |    
-| Specialty.addNew    |
-| Specialty.edit      |
-| Specialty.delete    |
-
 ![Figure Uses Case Specialty](uml/specialty/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
 
 ### Specialty State Diagram
 
+| Specialty Use Cases | Specialty States   |
+|---------------------|--------------------|
+| Specialty.list *    | SPECIALTY_LIST     | 
+| Specialty.search *  | SPECIALTY_LIST     | 
+| Specialty.addNew    | SPECIALTY_NEW      |
+| Specialty.edit      | SPECIALTY_EDIT     | 
+| Specialty.delete    | SPECIALTY_DELETE   |   
+| Specialty.list      | SPECIALTY_LIST2    |
+| Specialty.list      | SPECIALTY_LIST3    |
+| Specialty.list      | SPECIALTY_LIST4    |
+
+*) TODO
+
 ![Figure Uses Cases Specialty](uml/specialty/Specialty__State-Specialty_State_Diagram.png)
-
-| Specialty States | Specialty Use Cases |
-|------------------|---------------------|
-| SPECIALTY_LIST   | Specialty.list      |
-| SPECIALTY_NEW    | Specialty.addNew    |
-| SPECIALTY_EDIT   | Specialty.edit      | 
-| SPECIALTY_DELETE | Specialty.delete    |   
-| SPECIALTY_LIST2  | Specialty.list      |
-| SPECIALTY_LIST3  | Specialty.list      |
-| SPECIALTY_LIST4  | Specialty.list      |
-
 
 | Specialty Use Cases | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
 |---------------------|----------------------------------------|---------------------------------|----------------------|---------------------|----------------------------------|------------------------------------------------|
@@ -141,53 +130,51 @@ Object Oriented Design
 | Specialty.delete    | SpecialtyView.db_delete()              |                                 | x                    | OK                  | length(list(Specialty)) = n > 0  | length(list(Specialty)) = n-1                  |
 | Specialty.delete    | SpecialtyView.db_delete()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
 
+### SpecialtyViw Class
 ![Figure Class SpecialtyView](uml/specialty/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
 
 ## Vetinarian
 
 ### Vetinarian Use Case Diagram
 
-| Vetinarian Use Cases |
-|----------------------|
-| Vet.list             |
-| Vet.search           |
-| Vet.addNew           |
-| Vet.edit             |
-| Vet.delete           |
-
 ![Figure Uses Cases Vet](uml/vet/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
 
 ### Vetinarian State Diagram
 
+| Use Case     | Vetinarian States |
+|--------------|-------------------|
+| Vet.list *   | VET_LIST          |
+| Vet.search * | VET_LIST          |
+| Vet.addNew   | VET_NEW           |
+| Vet.edit     | VET_EDIT          |
+| Vet.delete   | VET_DELETE        |    
+| Vet.list     | VET_LIST2         |
+| Vet.list     | VET_LIST3         | 
+| Vet.list     | VET_LIST4         | 
+
+*) TODO
+
 ![Figure Vetinarian_State_Diagram](uml/vet/Vet__State-Vetinarian_State_Diagram.png)
 
-| Vetinarian States | Use Case   |
-|-------------------|------------|
-| VET_LIST          | Vet.list   |
-| VET_NEW           | Vet.addNew |
-| VET_EDIT          | Vet.edit   |
-| VET_DELETE        | Vet.delete |    
-| VET_LIST2         | Vet.list   |
-| VET_LIST3         | Vet.list   | 
-| VET_LIST4         | Vet.list   | 
+| Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
+|-------------|-----------------------------------|----------------------------------|----------------------|---------------------|-----------------------------------|-------------------------------------------------|
+| Vet.addNew  | VetView.button_addNew_dialog()    | x                                |                      | change state        | VET_LIST                          | VET_NEW                                         |
+| Vet.addNew  | VetView.button_cancel_and_back()  | x                                |                      | change state        | VET_NEW                           | VET_LIST                                        |
+| Vet.addNew  | VetView.button_addNew_perform()   | x, calls: Vetinarian.db_addNew() |                      | if OK: change state | VET_NEW                           | VET_LIST                                        |
+| Vet.addNew  | VetView.db_addNew()               |                                  | x                    | OK                  | length(list(Vetinarian)) = n      | length(list(Vetinarian)) = n+1                  |
+| Vet.addNew  | VetView.db_addNew()               |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n      | display cause as flash message                  |
+| Vet.edit    | VetView.button_edit_dialog()      | x                                |                      | change state        | VET_LIST                          | VET_EDIT                                        |
+| Vet.edit    | VetView.button_cancel_and_back()  | x                                |                      | change state        | VET_EDIT                          | VET_LIST                                        |
+| Vet.edit    | VetView.button_update_perform()   | x, calls: Vetinarian.db_update() |                      | if OK: change state | VET_EDIT                          | VET_LIST                                        |
+| Vet.edit    | VetView.db_update()               |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n; 1 element changed |
+| Vet.edit    | VetView.db_update()               |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
+| Vet.delete  | VetView.button_delete_dialog()    | x                                |                      | change state        | VET_LIST                          | VET_DELETE                                      |
+| Vet.delete  | VetView.button_cancel_and_back()  | x                                |                      | change state        | VET_DELETE                        | VET_LIST                                        |
+| Vet.delete  | VetView.button_delete_perform()   | x, calls: Vetinarian.db_delete() |                      | if OK: change state | VET_DELETE                        | VET_LIST                                        |
+| Vet.delete  | VetView.db_delete()               |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n-1                  |
+| Vet.delete  | VetView.db_delete()               |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
 
-| Use Case    | Actions                             | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
-|-------------|-------------------------------------|----------------------------------|----------------------|---------------------|-----------------------------------|-------------------------------------------------|
-| Vet.addNew  | VetView.button_addNew_dialog()   | x                                |                      | change state        | VET_LIST                          | VET_NEW                                         |
-| Vet.addNew  | VetView.button_cancel_and_back() | x                                |                      | change state        | VET_NEW                           | VET_LIST                                        |
-| Vet.addNew  | VetView.button_addNew_perform()  | x, calls: Vetinarian.db_addNew() |                      | if OK: change state | VET_NEW                           | VET_LIST                                        |
-| Vet.addNew  | VetView.db_addNew()              |                                  | x                    | OK                  | length(list(Vetinarian)) = n      | length(list(Vetinarian)) = n+1                  |
-| Vet.addNew  | VetView.db_addNew()              |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n      | display cause as flash message                  |
-| Vet.edit    | VetView.button_edit_dialog()     | x                                |                      | change state        | VET_LIST                          | VET_EDIT                                        |
-| Vet.edit    | VetView.button_cancel_and_back() | x                                |                      | change state        | VET_EDIT                          | VET_LIST                                        |
-| Vet.edit    | VetView.button_update_perform()  | x, calls: Vetinarian.db_update() |                      | if OK: change state | VET_EDIT                          | VET_LIST                                        |
-| Vet.edit    | VetView.db_update()              |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n; 1 element changed |
-| Vet.edit    | VetView.db_update()              |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
-| Vet.delete  | VetView.button_delete_dialog()   | x                                |                      | change state        | VET_LIST                          | VET_DELETE                                      |
-| Vet.delete  | VetView.button_cancel_and_back() | x                                |                      | change state        | VET_DELETE                        | VET_LIST                                        |
-| Vet.delete  | VetView.button_delete_perform()  | x, calls: Vetinarian.db_delete() |                      | if OK: change state | VET_DELETE                        | VET_LIST                                        |
-| Vet.delete  | VetView.db_delete()              |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n-1                  |
-| Vet.delete  | VetView.db_delete()              |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
+### VetinarianView Class
 
 ![Figure Class VetView](uml/vet/VetView__Class-VetView_Class_Diagram.png)
 
@@ -195,26 +182,28 @@ Object Oriented Design
 
 ### Owner Use Cases
 
-| Owner Use Cases        |
-|------------------------|
-| Owner.list             |
-| Owner.search           |
-| Owner.details          |
-| Owner.addNew           |
-| Owner.edit             |
-| Owner.delete           |
-| Owner.Pet.list         |
-| Owner.Pet.addNew       |
-| Owner.Pet.edit         |
-| Owner.Pet.delete       |
-| Owner.Pet.Visit.list   |
-| Owner.Pet.Visit.addNew |
-| Owner.Pet.Visit.edit   |
-| Owner.Pet.Visit.delete |
-
 ![Figure Uses Cases Owner](uml/owner/Owner__UseCases-Owner_Use_Case_Diagram.png)
 
-### Owner State Diagram
+### Owner State
+
+| Use Case               | Owner States           |
+|------------------------|------------------------|
+| Owner.list *           | OWNER_LIST             |  
+| Owner.search *         | OWNER_LIST             |
+| Owner.details          | OWNER_DETAILS          |  
+| Owner.addNew           | OWNER_NEW              |    
+| Owner.edit             | OWNER_EDIT             |    
+| Owner.delete           | OWNER_DELETE           |     
+| Owner.Pet.addNew       | OWNER_PET_NEW          | 
+| Owner.Pet.edit         | OWNER_PET_EDIT         |      
+| Owner.Pet.delete       | OWNER_PET_DELETE       |   
+| Owner.Pet.Visit.addNew | OWNER_PET_VISIT_NEW    | 
+| Owner.Pet.Visit.edit   | OWNER_PET_VISIT_EDIT   | 
+| Owner.Pet.Visit.delete | OWNER_PET_VISIT_DELETE |
+
+*) TODO
+
+#### Owner State Diagram
 
 ![Figure Uses Cases Owner](uml/owner/Owner__State-Owner_State_Diagram.png)
 
@@ -223,21 +212,6 @@ Object Oriented Design
 
 #### Owner State Diagram of Pet and Visits
 ![Figure Uses Cases Owner](uml/owner/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
-
-| Owner States           | Use Case               |
-|------------------------|------------------------|
-| OWNER_LIST             | Owner.list             |  
-| OWNER_DETAILS          | Owner.details          |  
-| OWNER_NEW              | Owner.addNew           |     
-| OWNER_EDIT             | Owner.edit             |    
-| OWNER_DELETE           | Owner.delete           |     
-| OWNER_PET_NEW          | Owner.Pet.addNew       | 
-| OWNER_PET_EDIT         | Owner.Pet.edit         |      
-| OWNER_PET_DELETE       | Owner.Pet.delete       |   
-| OWNER_PET_VISIT_NEW    | Owner.Pet.Visit.addNew | 
-| OWNER_PET_VISIT_EDIT   | Owner.Pet.Visit.edit   | 
-| OWNER_PET_VISIT_DELETE | Owner.Pet.Visit.delete |
-
 
 | Use Case               | Actions                                  | Frontend to View                  | View to Backend (DB) | outcome             | precondition                  | postcondition                              |
 |------------------------|------------------------------------------|-----------------------------------|----------------------|---------------------|-------------------------------|--------------------------------------------|
@@ -282,6 +256,8 @@ Object Oriented Design
 | Owner.Pet.Visit.delete | OwnerView.button_visit_delete_perform()  | x, calls: Owner.db_visit_delete() |                      | change state        | OWNER_PET_VISIT_DELETE        | OWNER_DETAILS                              |
 | Owner.Pet.Visit.delete | OwnerView.db_visit_delete()              |                                   | x                    | OK                  | length(list(Visit)) = n > 0   | length(list(Visit)) = n-1                  |
 | Owner.Pet.Visit.delete | OwnerView.db_visit_delete()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n >= 0  | display cause as flash message             |
+
+### OwnerView Class
 
 ![Figure Class VetView](uml/owner/OwnerView__Class-OwnerView_Class_Diagram.png)
 
