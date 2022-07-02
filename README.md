@@ -191,7 +191,11 @@ Object Oriented Design
 
 ### VetinarianView Class
 
-![Figure Class VetView](uml/vet/implementation/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
+![Figure View Class](uml/vet/implementation/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
+
+### vet.oodm
+
+![Figure DB Class](uml/vet/implementation/DB__Class-vet_oodm_Class_Diagram.png)
 
 ## Owner
 
@@ -278,7 +282,11 @@ Object Oriented Design
 
 ### OwnerView Class
 
-![Figure Class VetView](uml/owner/implementation/View__Class-OwnerView_Class_Diagram.png)
+![Figure View Class](uml/owner/implementation/View__Class-OwnerView_Class_Diagram.png)
+
+### owner.oodm
+
+![Figure DB Class](uml/owner/implementation/DB__class-owner_oodm_Class_Diagram.png)
 
 ## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
