@@ -165,7 +165,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Vetinarian_State_Diagram](uml/vet/concept/Vet__State-Vetinarian_State_Diagram.png)
+![Figure Vetinarian_State_Diagram](uml/vet/concept/Vet__UseCase__State-Vetinarian_State_Diagram.png)
 
 | Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
 |-------------|-----------------------------------|----------------------------------|----------------------|---------------------|-----------------------------------|-------------------------------------------------|
