@@ -49,7 +49,7 @@ Object Oriented Design
 
 ### PetType Use Case Diagram
 
-![Figure Uses Case PetType](uml/pettype/PetType__UseCase-PetType_Use_Case_Diagram.png)
+![Figure Uses Case PetType](uml/pettype/concept/PetType__UseCase-PetType_Use_Case_Diagram.png)
 
 ### PetType State Diagram
 
@@ -67,7 +67,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Uses Cases PetType](uml/pettype/PetType__State-PetType_State_Diagram.png)
+![Figure Uses Cases PetType](uml/pettype/concept/PetType__State-PetType_State_Diagram.png)
 
 | PetType Use Cases | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
 |-------------------|--------------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
@@ -91,7 +91,7 @@ Object Oriented Design
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
-![Figure PetTypeView](uml/pettype/PetTypeView__Class-PetTypeView_Class_Diagram.png)
+![Figure PetTypeView](uml/pettype/implementation/PetTypeView__Class-PetTypeView_Class_Diagram.png)
 
 
 ## Specialty
