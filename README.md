@@ -116,7 +116,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Uses Cases Specialty](uml/vet/concept/Specialty__State-Specialty_State_Diagram.png)
+![Figure Uses Cases Specialty](uml/vet/concept/Specialty__UseCase__State-Specialty_State_Diagram.png)
 
 | Specialty Use Cases | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
 |---------------------|----------------------------------------|---------------------------------|----------------------|---------------------|----------------------------------|------------------------------------------------|
