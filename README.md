@@ -98,7 +98,7 @@ Object Oriented Design
 
 ### Specialty Use Case Diagram
 
-![Figure Uses Case Specialty](uml/specialty/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
+![Figure Uses Case Specialty](uml/specialty/concept/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
 
 ### Specialty State Diagram
 
@@ -116,7 +116,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Uses Cases Specialty](uml/specialty/Specialty__State-Specialty_State_Diagram.png)
+![Figure Uses Cases Specialty](uml/specialty/concept/Specialty__State-Specialty_State_Diagram.png)
 
 | Specialty Use Cases | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
 |---------------------|----------------------------------------|---------------------------------|----------------------|---------------------|----------------------------------|------------------------------------------------|
@@ -141,7 +141,7 @@ Object Oriented Design
 | Specialty.delete    | SpecialtyView.db_delete()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
 
 ### SpecialtyViw Class
-![Figure Class SpecialtyView](uml/specialty/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
+![Figure Class SpecialtyView](uml/specialty/implementation/SpecialtyView__Class-SpecialtyView_Class_Diagram.png)
 
 ## Vetinarian
 
