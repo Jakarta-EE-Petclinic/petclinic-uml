@@ -282,7 +282,7 @@ Object Oriented Design
 
 ### OwnerView Class
 
-![Figure View Class](uml/owner/implementation/View__Class-OwnerView_Class_Diagram.png)
+![Figure View Class](uml/vet/implementation/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
 
 ### owner.oodm
 
