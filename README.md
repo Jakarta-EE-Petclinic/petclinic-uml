@@ -67,7 +67,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Uses Cases PetType](uml/owner/concept/PetType__State-PetType_State_Diagram.png)
+![Figure Uses Cases PetType](uml/owner/concept/PetType__UseCase_State-PetType_Use_Case_State_Diagram.png)
 
 | PetType Use Cases | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
 |-------------------|--------------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
