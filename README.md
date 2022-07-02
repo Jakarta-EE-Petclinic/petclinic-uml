@@ -224,13 +224,13 @@ Object Oriented Design
 
 #### Owner State Diagram
 
-![Figure Uses Cases Owner](uml/owner/concept/Owner__State-Owner_State_Diagram.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State-Owner_Use_Case_State_Diagram.png)
 
 #### Owner State Diagram without Pet and Visits
-![Figure Uses Cases Owner](uml/owner/concept/Owner__State__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State__without_details-Owner_Use_Case_State_Diagram_without_Pet_and_Visits.png)
 
 #### Owner State Diagram of Pet and Visits
-![Figure Uses Cases Owner](uml/owner/concept/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
+![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State__details-Owner_Use_Case_State_Diagram_of_Pet_and_Visits.png)
 
 | Use Case               | Actions                                  | Frontend to View                  | View to Backend (DB) | outcome             | precondition                  | postcondition                              |
 |------------------------|------------------------------------------|-----------------------------------|----------------------|---------------------|-------------------------------|--------------------------------------------|
