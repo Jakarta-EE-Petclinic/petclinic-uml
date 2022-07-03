@@ -18,6 +18,7 @@ entity Owner {
  String city
  String zipCode
  String phoneNumber
+ String email
  list()
  search()
  addNew()
@@ -36,8 +37,17 @@ entity Pet {
 entity Visit {
     Date dateOfVisit
     String description
-    listVisitsOfOwnersPet()
+    listVisitsOfPet()
     addNew()
+}
+
+entity PetType {
+    String name
+    list()
+    search()
+    addNew()
+    edit()
+    delete()
 }
 
 entity Vet {
@@ -50,18 +60,11 @@ entity Vet {
     delete()
 }
 
-entity PetType {
-    String name
-    list()
-    search()
-    addNew()
-    edit()
-    delete()
-}
 
 entity Specialty {
     String name
     list()
+    listSpecialtiesOfVet()
     search()
     addNew()
     edit()
@@ -71,5 +74,5 @@ entity Specialty {
 Owner "one"  *--> "many"  Pet: pets
 Pet "one" *--> "many" Visit: visits
 Pet "many"  o-->  "one" PetType: petType
-Vet "one" o--> "many" Specialty: specialties
+Vet "many" o--> "many" Specialty: specialties
 @enduml
