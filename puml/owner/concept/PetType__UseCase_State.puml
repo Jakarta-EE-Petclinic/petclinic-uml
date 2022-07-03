@@ -5,38 +5,37 @@ title PetType Use Case State Diagram
 'https://plantuml.com/state-diagram
 
 left to right direction
-' top to bottom direction
+'top to bottom direction
 
 scale 1000 width
 
-[*] --> PETTYPE_LIST
+[*] -> PETTYPE_LIST: button_list_dialog()
 
 PETTYPE_LIST --> PETTYPE_NEW : button_addNew_dialog()
 PETTYPE_NEW --> PETTYPE_LIST: button_cancel_and_back()
-PETTYPE_NEW --> PETTYPE_LIST2: button_addNew_perform() OK
-
-PETTYPE_LIST --> PETTYPE_EDIT: button_edit_dialog()
-PETTYPE_EDIT --> PETTYPE_LIST: button_cancel_and_back()
-PETTYPE_EDIT --> PETTYPE_LIST3: button_update_perform() OK
-
-PETTYPE_LIST --> PETTYPE_DELETE: button_delete_dialog()
-PETTYPE_DELETE --> PETTYPE_LIST: button_cancel_and_back()
-PETTYPE_DELETE --> PETTYPE_LIST4: button_delete_perform() OK
-
-PETTYPE_LIST2 --> [*]
-PETTYPE_LIST3 --> [*]
-PETTYPE_LIST4 --> [*]
-
-
 state PETTYPE_NEW {
     PETTYPE_NEW --> PETTYPE_NEW : button_addNew_perform() not OK, invalid
 }
+PETTYPE_NEW -> PETTYPE_DETAILS: button_addNew_perform() OK
+
+PETTYPE_LIST --> PETTYPE_DETAILS: button_detail_dialog()
+PETTYPE_DETAILS --> PETTYPE_LIST : button_back_to_list()
+
+PETTYPE_DETAILS --> PETTYPE_EDIT: button_edit_dialog()
+PETTYPE_EDIT --> PETTYPE_DETAILS: button_cancel_and_back()
 state PETTYPE_EDIT {
     PETTYPE_EDIT --> PETTYPE_EDIT: button_update_perform() not OK, invalid
 }
+PETTYPE_EDIT --> PETTYPE_DETAILS: button_update_perform() OK
+
+PETTYPE_DETAILS --> PETTYPE_DELETE: button_delete_dialog()
+PETTYPE_DELETE --> PETTYPE_DETAILS: button_cancel_and_back()
 state PETTYPE_DELETE {
     PETTYPE_DELETE --> PETTYPE_DELETE: button_delete_perform() not OK, invalid
 }
+PETTYPE_DELETE --> PETTYPE_DETAILS: button_delete_perform() OK
 
+PETTYPE_LIST -> [*]
+PETTYPE_DETAILS -> [*]
 
 @enduml

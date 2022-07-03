@@ -11,11 +11,11 @@ scale 1000 width
 
 User - (Login)
 package application {
-    (Login) -> (Navigation)
-    (Navigation) --> (Start)
-    (Navigation) --> (Info)
-    (Navigation) --> (Help)
-    (Navigation) --> (UserInfo)
-    (Navigation) --> (Logout)
+    (Application.Login) -> (Navigation)
+    (Navigation) --> (Application.Start)
+    (Navigation) --> (Application.Info)
+    (Navigation) --> (Application.Help)
+    (Navigation) --> (Application.UserInfo)
+    (Navigation) --> (Application.Logout)
 }
 @enduml

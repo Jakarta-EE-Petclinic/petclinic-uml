@@ -14,8 +14,9 @@ package pet-type {
     (Login) -> (Navigation)
     (Navigation) -> (PetType.list)
     (PetType.list) --> (PetType.search)
-    (PetType.list) ---> (PetType.addNew)
-    (PetType.list) ---> (PetType.edit)
-    (PetType.list) ---> (PetType.delete)
+    (PetType.list) --> (PetType.details)
+    (PetType.list) --> (PetType.addNew)
+    (PetType.details) ---> (PetType.edit)
+    (PetType.details) ---> (PetType.delete)
 }
 @enduml
