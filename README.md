@@ -55,7 +55,7 @@ Object Oriented Design
 
 #### Specialty Use Case Diagram
 
-![Figure Uses Case Specialty](uml/vet/concept/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
+![Figure Uses Case Specialty](uml/vet/specialty/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
 
 #### Specialty Use Case and State Table
 
@@ -73,7 +73,7 @@ Object Oriented Design
 
 #### Specialty State Diagram
 
-![Figure Uses Cases Specialty](uml/vet/concept/Specialty__UseCase__State-Specialty_State_Diagram.png)
+![Figure Uses Cases Specialty](uml/vet/specialty/Specialty__UseCase__State-Specialty_State_Diagram.png)
 
 #### Specialty State Table
 
@@ -106,7 +106,7 @@ Object Oriented Design
 
 #### Vet Use Case Diagram
 
-![Figure Uses Cases Vet](uml/vet/concept/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
+![Figure Uses Cases Vet](uml/vet/vet/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
 
 #### Vet Use Case and State Table
 
@@ -125,7 +125,7 @@ Object Oriented Design
 
 #### Vet State Diagram
 
-![Figure Vetinarian_State_Diagram](uml/vet/concept/Vet__UseCase__State-Vetinarian_State_Diagram.png)
+![Figure Vetinarian_State_Diagram](uml/vet/vet/Vet__UseCase__State-Vetinarian_State_Diagram.png)
 
 #### Vet State Table
 
@@ -155,11 +155,11 @@ Object Oriented Design
 
 ### VetView and SpecialtyView Class Diagram
 
-![Figure View Class](uml/vet/implementation/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
+![Figure View Class](uml/vet/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
 
 ### Specialty and Vet DB Backend: vet.oodm
 
-![Figure DB Class](uml/vet/implementation/DB__Class-vet_oodm_Class_Diagram.png)
+![Figure DB Class](uml/vet/DB__Class-vet_oodm_Class_Diagram.png)
 
 
 
