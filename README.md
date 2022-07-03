@@ -305,11 +305,11 @@ Object Oriented Design
 
 ### OwnerView and PetTypeView Class Diagram
 
-![Figure View Class](uml/owner/implementation/View__Class-OwnerView_and_PetTypeView_Class_Diagram.png)
+![Figure View Class](uml/owner/View__Class-OwnerView_and_PetTypeView_Class_Diagram.png)
 
 ### Owner and PetType DB Backend: owner.oodm
 
-![Figure DB Class](uml/owner/implementation/DB__class-owner_oodm_Class_Diagram.png)
+![Figure DB Class](uml/owner/DB__class-owner_oodm_Class_Diagram.png)
 
 ## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
