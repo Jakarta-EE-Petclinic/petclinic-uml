@@ -35,7 +35,8 @@ This Specification should also serve as Specification for non-Web Frontends like
 
 Object Oriented Design
 
-## Petclinic
+
+## Petclinic Overview
 
 ### Petclinic Domain Class Modell
 ![Figure Domain Class Modell](uml/Domain_Class_Modell-Petclinic_Domain_Class_Modell.png)
@@ -45,67 +46,18 @@ Object Oriented Design
 ![Figure Uses Cases Petclinic](uml/Use_Cases-Petclinic_Use_Case_Diagram.png)
 
 
-## PetType 
 
-### PetType Use Case Diagram
+## Application
 
-![Figure Uses Case PetType](uml/owner/concept/PetType__UseCase-PetType_Use_Case_Diagram.png)
+## Vet and Specialty
 
-### PetType State Diagram
+### Specialty
 
-| PetType States   | PetType Use Cases          | Frontend                                 |
-|------------------|----------------------------|------------------------------------------|
-| PetType.list     | PETTYPE_LIST_EMPTY         | Disable Search-Button and Paging-Widget  |
-| PetType.list     | PETTYPE_LIST               |                                          |
-| PetType.search * | PETTYPE_LIST_SEARCH_RESULT |                                          |
-| PetType.addNew   | PETTYPE_NEW                |                                          |
-| PetType.details  | PETTYPE_DETAILS            |                                          |
-| PetType.edit     | PETTYPE_EDIT               |                                          |
-| PetType.delete   | PETTYPE_DELETE             |                                          |
-
-*) TODO
-
-![Figure Uses Cases PetType](uml/owner/concept/PetType__UseCase_State-PetType_Use_Case_State_Diagram.png)
-
-| PetType Use Cases | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
-|-------------------|--------------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
-| PetType.list      | PetTypeView.button_list_dialog()     | x, calls: PetType.load_list() |                      | change state        | length(list(PetType)) == 0     | PETTYPE_LIST_EMPTY                           |
-| PetType.list      | PetTypeView.button_list_dialog()     | x, calls: PetType.load_list() |                      | change state        | length(list(PetType)) > 0      | PETTYPE_LIST                                 |
-| PetType.list      | PetTypeView.load_list()              |                               | x                    | list(PetType)       | length(list(PetType)) == 0     | PETTYPE_LIST_EMPTY                           |
-| PetType.list      | PetTypeView.load_list()              |                               | x                    | list(PetType)       | length(list(PetType)) > 0      | PETTYPE_LIST                                 |
-| PetType.addNew    | PetTypeView.button_addNew_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_NEW                                  |
-| PetType.addNew    | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_NEW                    | PETTYPE_LIST                                 |
-| PetType.addNew    | PetTypeView.button_addNew_perform()  | x, calls: PetType.db_addNew() |                      | if OK: change state | PETTYPE_NEW                    | PETTYPE_DETAILS                              |
-| PetType.addNew    | PetTypeView.db_addNew()              |                               | x                    | OK                  | length(list(PetType)) = n      | length(list(PetType)) = n+1                  |
-| PetType.addNew    | PetTypeView.db_addNew()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n      | display cause as flash message               |
-| PetType.details   | PetTypeView.button_detail_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_DETAILS                              |
-| PetType.details   | PetTypeView.button_detail_dialog()   | x                             |                      | change state        | PETTYPE_LIST_EMPTY             | PETTYPE_DETAILS                              |
-| PetType.edit      | PetTypeView.button_edit_dialog()     | x                             |                      | change state        | PETTYPE_DETAILS                | PETTYPE_EDIT                                 |
-| PetType.edit      | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
-| PetType.edit      | PetTypeView.button_update_perform()  | x, calls: PetType.db_update() |                      | if OK: change state | PETTYPE_EDIT                   | PETTYPE_DETAILS                              |
-| PetType.edit      | PetTypeView.db_update()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n; 1 element changed |
-| PetType.edit      | PetTypeView.db_update()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
-| PetType.delete    | PetTypeView.button_delete_dialog()   | x                             |                      | change state        | PETTYPE_DETAILS                | PETTYPE_DELETE                               |
-| PetType.delete    | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_DELETE                 | PETTYPE_LIST                                 |
-| PetType.delete    | PetTypeView.button_delete_perform()  | x, calls: PetType.db_delete() |                      | if OK: change state | PETTYPE_DELETE                 | PETTYPE_DETAILS                              |
-| PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
-| PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
-
-### (OwnerView and) PetTypeView Class Diagram
-
-![Figure PetTypeView](uml/owner/implementation/View__Class-OwnerView_and_PetTypeView_Class_Diagram.png)
-
-### owner.oodm
-
-![Figure DB Class](uml/owner/implementation/DB__class-owner_oodm_Class_Diagram.png)
-
-## Specialty
-
-### Specialty Use Case Diagram
+#### Specialty Use Case Diagram
 
 ![Figure Uses Case Specialty](uml/vet/concept/Specialty__UseCase-Specialty_Use_Case_Diagram.png)
 
-### Specialty State Diagram
+#### Specialty Use Case and State Table
 
 | Specialty Use Cases  | Specialty States             | Frontend                                |
 |----------------------|------------------------------|-----------------------------------------|
@@ -119,7 +71,11 @@ Object Oriented Design
 
 *) TODO
 
+#### Specialty State Diagram
+
 ![Figure Uses Cases Specialty](uml/vet/concept/Specialty__UseCase__State-Specialty_State_Diagram.png)
+
+#### Specialty State Table
 
 | PetType Use Cases   | Actions                                   | Frontend to View                         | View to Backend (DB) | outcome             | precondition                        | postcondition                                  |
 |---------------------|-------------------------------------------|------------------------------------------|--------------------|---------------------|-------------------------------------|------------------------------------------------|
@@ -146,16 +102,13 @@ Object Oriented Design
 | Specialty.delete    | SpecialtyView.db_delete()                 |                                          | x                  | not OK, invalid     | length(list(Specialty)) = n >= 0    | display cause as flash message                 |
 
 
-### SpecialtyViw Class
-![Figure Class SpecialtyView](uml/vet/implementation/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
+### Vet
 
-## Vetinarian
-
-### Vetinarian Use Case Diagram
+#### Vet Use Case Diagram
 
 ![Figure Uses Cases Vet](uml/vet/concept/Vet__UseCase-Vetinarian_Use_Case_Diagram.png)
 
-### Vetinarian State Diagram
+#### Vet Use Case and State Table
 
 | Use Case     | Vetinarian States       | Frontend                                |
 |--------------|-------------------------|-----------------------------------------|
@@ -170,7 +123,11 @@ Object Oriented Design
 
 *) TODO
 
+#### Vet State Diagram
+
 ![Figure Vetinarian_State_Diagram](uml/vet/concept/Vet__UseCase__State-Vetinarian_State_Diagram.png)
+
+#### Vet State Table
 
 | PetType Use Cases | Actions                             | Frontend to View                   | View to Backend (DB) | outcome             | precondition                  | postcondition                            |
 |-------------------|-------------------------------------|------------------------------------|----------------------|---------------------|-------------------------------|------------------------------------------|
@@ -196,21 +153,75 @@ Object Oriented Design
 | Vet.delete        | VetView.db_delete()                 |                                    | x                    | OK                  | length(list(Vet)) = n > 0     | length(list(Vet)) = n-1                  |
 | Vet.delete        | VetView.db_delete()                 |                                    | x                    | not OK, invalid     | length(list(Vet)) = n >= 0    | display cause as flash message           |
 
-### VetinarianView Class
+### VetView and SpecialtyView Class Diagram
 
 ![Figure View Class](uml/vet/implementation/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
 
-### vet.oodm
+### Specialty and Vet DB Backend: vet.oodm
 
 ![Figure DB Class](uml/vet/implementation/DB__Class-vet_oodm_Class_Diagram.png)
 
-## Owner
 
-### Owner Use Cases
+
+## Owner and PetType
+
+### PetType 
+
+#### PetType Use Case Diagram
+
+![Figure Uses Case PetType](uml/owner/concept/PetType__UseCase-PetType_Use_Case_Diagram.png)
+
+#### PetType Use Cases and States Table
+
+| PetType States   | PetType Use Cases          | Frontend                                 |
+|------------------|----------------------------|------------------------------------------|
+| PetType.list     | PETTYPE_LIST_EMPTY         | Disable Search-Button and Paging-Widget  |
+| PetType.list     | PETTYPE_LIST               |                                          |
+| PetType.search * | PETTYPE_LIST_SEARCH_RESULT |                                          |
+| PetType.addNew   | PETTYPE_NEW                |                                          |
+| PetType.details  | PETTYPE_DETAILS            |                                          |
+| PetType.edit     | PETTYPE_EDIT               |                                          |
+| PetType.delete   | PETTYPE_DELETE             |                                          |
+
+*) TODO
+#### PetType State Diagram
+
+![Figure Uses Cases PetType](uml/owner/concept/PetType__UseCase_State-PetType_Use_Case_State_Diagram.png)
+
+#### PetType State Table
+
+| PetType Use Cases | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
+|-------------------|--------------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
+| PetType.list      | PetTypeView.button_list_dialog()     | x, calls: PetType.load_list() |                      | change state        | length(list(PetType)) == 0     | PETTYPE_LIST_EMPTY                           |
+| PetType.list      | PetTypeView.button_list_dialog()     | x, calls: PetType.load_list() |                      | change state        | length(list(PetType)) > 0      | PETTYPE_LIST                                 |
+| PetType.list      | PetTypeView.load_list()              |                               | x                    | list(PetType)       | length(list(PetType)) == 0     | PETTYPE_LIST_EMPTY                           |
+| PetType.list      | PetTypeView.load_list()              |                               | x                    | list(PetType)       | length(list(PetType)) > 0      | PETTYPE_LIST                                 |
+| PetType.addNew    | PetTypeView.button_addNew_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_NEW                                  |
+| PetType.addNew    | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_NEW                    | PETTYPE_LIST                                 |
+| PetType.addNew    | PetTypeView.button_addNew_perform()  | x, calls: PetType.db_addNew() |                      | if OK: change state | PETTYPE_NEW                    | PETTYPE_DETAILS                              |
+| PetType.addNew    | PetTypeView.db_addNew()              |                               | x                    | OK                  | length(list(PetType)) = n      | length(list(PetType)) = n+1                  |
+| PetType.addNew    | PetTypeView.db_addNew()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n      | display cause as flash message               |
+| PetType.details   | PetTypeView.button_detail_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_DETAILS                              |
+| PetType.details   | PetTypeView.button_detail_dialog()   | x                             |                      | change state        | PETTYPE_LIST_EMPTY             | PETTYPE_DETAILS                              |
+| PetType.edit      | PetTypeView.button_edit_dialog()     | x                             |                      | change state        | PETTYPE_DETAILS                | PETTYPE_EDIT                                 |
+| PetType.edit      | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
+| PetType.edit      | PetTypeView.button_update_perform()  | x, calls: PetType.db_update() |                      | if OK: change state | PETTYPE_EDIT                   | PETTYPE_DETAILS                              |
+| PetType.edit      | PetTypeView.db_update()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n; 1 element changed |
+| PetType.edit      | PetTypeView.db_update()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
+| PetType.delete    | PetTypeView.button_delete_dialog()   | x                             |                      | change state        | PETTYPE_DETAILS                | PETTYPE_DELETE                               |
+| PetType.delete    | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_DELETE                 | PETTYPE_LIST                                 |
+| PetType.delete    | PetTypeView.button_delete_perform()  | x, calls: PetType.db_delete() |                      | if OK: change state | PETTYPE_DELETE                 | PETTYPE_DETAILS                              |
+| PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
+| PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
+
+
+### Owner
+
+#### Owner Use Cases
 
 ![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases-Owner_Use_Case_Diagram.png)
 
-### Owner State
+#### Owner State
 
 | Use Case               | Owner States             | Frontend                                                |
 |------------------------|--------------------------|---------------------------------------------------------|
@@ -232,15 +243,17 @@ Object Oriented Design
 
 #### Owner State Diagram
 
+##### Owner State Diagram
+
 ![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State-Owner_Use_Case_State_Diagram.png)
 
-#### Owner State Diagram without Pet and Visits
+##### Owner State Diagram without Pet and Visits
 ![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State__without_details-Owner_Use_Case_State_Diagram_without_Pet_and_Visits.png)
 
-#### Owner State Diagram of Pet and Visits
+##### Owner State Diagram of Pet and Visits
 ![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State__details-Owner_Use_Case_State_Diagram_of_Pet_and_Visits.png)
 
-#### Table Owner State
+#### Owner State Table
 
 | Use Case               | Actions                                  | Frontend to View                  | View to Backend (DB) | outcome             | precondition                     | postcondition                              |
 |------------------------|------------------------------------------|-----------------------------------|----------------------|---------------------|----------------------------------|--------------------------------------------|
@@ -290,11 +303,11 @@ Object Oriented Design
 | Owner.Pet.Visit.delete | OwnerView.db_visit_delete()              |                                   | x                    | OK                  | length(list(Visit)) = n > 0      | length(list(Visit)) = n-1                  |
 | Owner.Pet.Visit.delete | OwnerView.db_visit_delete()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n >= 0     | display cause as flash message             |
 
-### ### OwnerView (and PetTypeView) Class Diagram
+### OwnerView and PetTypeView Class Diagram
 
 ![Figure View Class](uml/owner/implementation/View__Class-OwnerView_and_PetTypeView_Class_Diagram.png)
 
-### owner.oodm
+### Owner and PetType DB Backend: owner.oodm
 
 ![Figure DB Class](uml/owner/implementation/DB__class-owner_oodm_Class_Diagram.png)
 
