@@ -6,7 +6,7 @@ title owner.oodm Class Diagram
 left to right direction
 ' top to bottom direction
 
-scale 1000 width
+scale 2000 width
 
 package owner.oodm {
 
