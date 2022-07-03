@@ -11,6 +11,9 @@ class VetView {
 
     - VetState currentState
 
+    button_list_dialog(): VetState
+    - load_list(): boolean
+
     button_cancel_and_back(): VetState
 
     button_addNew_dialog(): VetState
@@ -29,6 +32,9 @@ class VetView {
 class SpecialtyView {
 
     - SpecialtyState currentState
+
+    button_list_dialog(): SpecialtyState
+    - load_list(): boolean
 
     button_cancel_and_back(): SpecialtyState
 

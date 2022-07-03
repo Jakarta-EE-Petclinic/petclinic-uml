@@ -13,6 +13,9 @@ class OwnerView {
 
     OwnerState currentState
 
+    button_list_dialog(): OwnerState
+    - load_list(): boolean
+
     button_owner_cancel_and_back(): OwnerState
 
     button_owner_details_dialog(): OwnerState
@@ -62,6 +65,9 @@ class OwnerView {
 class PetTypeView {
 
     PetTypeState currentState
+
+    button_list_dialog(): PetTypeState
+    - load_list(): boolean
 
     button_cancel_and_back(): PetTypeState
 
