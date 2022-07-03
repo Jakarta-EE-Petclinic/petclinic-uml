@@ -7,7 +7,7 @@ left to right direction
 
 'https://plantuml.com/use-case-diagram
 
-scale 1000 width
+scale 2000 width
 
 User - (Login)
 package application {

@@ -43,7 +43,7 @@ Object Oriented Design
 
 ### Petclinic Use Case Diagram
 
-![Figure Uses Cases Petclinic](uml/Use_Cases-Petclinic_Use_Case_Diagram.png)
+![Figure Uses Cases Petclinic](uml/Petclinic__Use_Cases-Petclinic_Use_Case_Diagram.png)
 
 
 
