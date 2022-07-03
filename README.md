@@ -53,17 +53,15 @@ Object Oriented Design
 
 ### PetType State Diagram
 
-| PetType States   | PetType Use Cases          | Frontend                                                |
-|------------------|----------------------------|---------------------------------------------------------|
-| PetType.list *   | PETTYPE_LIST_EMPTY         | Disable Edit-, Delete-, Search-Button and Paging-Widget |
-| PetType.list *   | PETTYPE_LIST               |                                                         |
-| PetType.search * | PETTYPE_LIST_SEARCH_RESULT |                                                         |
-| PetType.addNew   | PETTYPE_NEW                |                                                         |
-| PetType.edit     | PETTYPE_EDIT               |                                                         |
-| PetType.delete   | PETTYPE_DELETE             |                                                         |
-| PetType.list     | PETTYPE_LIST2 *            |                                                         |
-| PetType.list     | PETTYPE_LIST3 *            |                                                         |
-| PetType.list     | PETTYPE_LIST4 *            |                                                         |
+| PetType States   | PetType Use Cases          | Frontend                                 |
+|------------------|----------------------------|------------------------------------------|
+| PetType.list     | PETTYPE_LIST_EMPTY         | Disable Search-Button and Paging-Widget  |
+| PetType.list     | PETTYPE_LIST               |                                          |
+| PetType.search * | PETTYPE_LIST_SEARCH_RESULT |                                          |
+| PetType.addNew   | PETTYPE_NEW                |                                          |
+| PetType.details  | PETTYPE_DETAILS            |                                          |
+| PetType.edit     | PETTYPE_EDIT               |                                          |
+| PetType.delete   | PETTYPE_DELETE             |                                          |
 
 *) TODO
 
@@ -71,23 +69,25 @@ Object Oriented Design
 
 | PetType Use Cases | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
 |-------------------|--------------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
-| Use Case          | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
-| Use Case          | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
-| Use Case          | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
-| Use Case          | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
+| PetType.list      | PetTypeView.button_list_dialog()     | x, calls: PetType.load_list() |                      | change state        | length(list(PetType)) == 0     | PETTYPE_LIST_EMPTY                           |
+| PetType.list      | PetTypeView.button_list_dialog()     | x, calls: PetType.load_list() |                      | change state        | length(list(PetType)) > 0      | PETTYPE_LIST                                 |
+| PetType.list      | PetTypeView.load_list()              |                               | x                    | list(PetType)       | length(list(PetType)) == 0     | PETTYPE_LIST_EMPTY                           |
+| PetType.list      | PetTypeView.load_list()              |                               | x                    | list(PetType)       | length(list(PetType)) > 0      | PETTYPE_LIST                                 |
 | PetType.addNew    | PetTypeView.button_addNew_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_NEW                                  |
 | PetType.addNew    | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_NEW                    | PETTYPE_LIST                                 |
-| PetType.addNew    | PetTypeView.button_addNew_perform()  | x, calls: PetType.db_addNew() |                      | if OK: change state | PETTYPE_NEW                    | PETTYPE_LIST                                 |
+| PetType.addNew    | PetTypeView.button_addNew_perform()  | x, calls: PetType.db_addNew() |                      | if OK: change state | PETTYPE_NEW                    | PETTYPE_DETAILS                              |
 | PetType.addNew    | PetTypeView.db_addNew()              |                               | x                    | OK                  | length(list(PetType)) = n      | length(list(PetType)) = n+1                  |
 | PetType.addNew    | PetTypeView.db_addNew()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n      | display cause as flash message               |
-| PetType.edit      | PetTypeView.button_edit_dialog()     | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_EDIT                                 |
+| PetType.details   | PetTypeView.button_detail_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_DETAILS                              |
+| PetType.details   | PetTypeView.button_detail_dialog()   | x                             |                      | change state        | PETTYPE_LIST_EMPTY             | PETTYPE_DETAILS                              |
+| PetType.edit      | PetTypeView.button_edit_dialog()     | x                             |                      | change state        | PETTYPE_DETAILS                | PETTYPE_EDIT                                 |
 | PetType.edit      | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
-| PetType.edit      | PetTypeView.button_update_perform()  | x, calls: PetType.db_update() |                      | if OK: change state | PETTYPE_EDIT                   | PETTYPE_LIST                                 |
+| PetType.edit      | PetTypeView.button_update_perform()  | x, calls: PetType.db_update() |                      | if OK: change state | PETTYPE_EDIT                   | PETTYPE_DETAILS                              |
 | PetType.edit      | PetTypeView.db_update()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n; 1 element changed |
 | PetType.edit      | PetTypeView.db_update()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
-| PetType.delete    | PetTypeView.button_delete_dialog()   | x                             |                      | change state        | PETTYPE_LIST                   | PETTYPE_DELETE                               |
+| PetType.delete    | PetTypeView.button_delete_dialog()   | x                             |                      | change state        | PETTYPE_DETAILS                | PETTYPE_DELETE                               |
 | PetType.delete    | PetTypeView.button_cancel_and_back() | x                             |                      | change state        | PETTYPE_DELETE                 | PETTYPE_LIST                                 |
-| PetType.delete    | PetTypeView.button_delete_perform()  | x, calls: PetType.db_delete() |                      | if OK: change state | PETTYPE_DELETE                 | PETTYPE_LIST                                 |
+| PetType.delete    | PetTypeView.button_delete_perform()  | x, calls: PetType.db_delete() |                      | if OK: change state | PETTYPE_DELETE                 | PETTYPE_DETAILS                              |
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
@@ -102,17 +102,15 @@ Object Oriented Design
 
 ### Specialty State Diagram
 
-| Specialty Use Cases | Specialty States             | Frontend                                                |
-|---------------------|------------------------------|---------------------------------------------------------|
-| Specialty.list *    | SPECIALTY_LIST_EMPTY         | Disable Edit-, Delete-, Search-Button and Paging-Widget |
-| Specialty.list *    | SPECIALTY_LIST               |                                                         |
-| Specialty.search *  | SPECIALTY_LIST_SEARCH_RESULT |                                                         |
-| Specialty.addNew    | SPECIALTY_NEW                |                                                         |
-| Specialty.edit      | SPECIALTY_EDIT               |                                                         |
-| Specialty.delete    | SPECIALTY_DELETE             |                                                         | 
-| Specialty.list      | SPECIALTY_LIST2 *            |                                                         |
-| Specialty.list      | SPECIALTY_LIST3 *            |                                                         |
-| Specialty.list      | SPECIALTY_LIST4 *            |                                                         |
+| Specialty Use Cases  | Specialty States             | Frontend                                |
+|----------------------|------------------------------|-----------------------------------------|
+| Specialty.list       | SPECIALTY_LIST_EMPTY         | Disable Search-Button and Paging-Widget |
+| Specialty.list       | SPECIALTY_LIST               |                                         |
+| Specialty.search *   | SPECIALTY_LIST_SEARCH_RESULT |                                         |
+| Specialty.addNew     | SPECIALTY_NEW                |                                         |
+| Specialty.details    | SPECIALTY_DETAILS            |                                         |
+| Specialty.edit       | SPECIALTY_EDIT               |                                         |
+| Specialty.delete     | SPECIALTY_DELETE             |                                         | 
 
 *) TODO
 
@@ -151,17 +149,15 @@ Object Oriented Design
 
 ### Vetinarian State Diagram
 
-| Use Case     | Vetinarian States      | Frontend                                                |
-|--------------|------------------------|---------------------------------------------------------|
-| Vet.list *   | VET_LIST_EMPTY         | Disable Edit-, Delete-, Search-Button and Paging-Widget |
-| Vet.list *   | VET_LIST               |                                                         |
-| Vet.search * | VET_LIST_SEARCH_RESULT |                                                         |
-| Vet.addNew   | VET_NEW                |                                                         |
-| Vet.edit     | VET_EDIT               |                                                         |
-| Vet.delete   | VET_DELETE             |                                                         |   
-| Vet.list     | VET_LIST2 *            |                                                         |
-| Vet.list     | VET_LIST3 *            |                                                         |
-| Vet.list     | VET_LIST4 *            |                                                         |
+| Use Case     | Vetinarian States      | Frontend                                |
+|--------------|------------------------|-----------------------------------------|
+| Vet.list     | VET_LIST_EMPTY         | Disable Search-Button and Paging-Widget |
+| Vet.list     | VET_LIST               |                                         |
+| Vet.search * | VET_LIST_SEARCH_RESULT |                                         |
+| Vet.addNew   | VET_NEW                |                                         |
+| Vet.details  | VET_DETAILS            |                                         |
+| Vet.edit     | VET_EDIT               |                                         |
+| Vet.delete   | VET_DELETE             |                                         |   
 
 *) TODO
 
@@ -210,7 +206,8 @@ Object Oriented Design
 | Owner.list *           | OWNER_LIST_EMPTY         | Disable Edit-, Delete-, Search-Button and Paging-Widget |
 | Owner.list *           | OWNER_LIST               |                                                         |
 | Owner.list *           | OWNER_LIST_SEARCH_RESULT |                                                         |
-| Owner.addNew           | OWNER_NEW                |                                                         |  
+| Owner.addNew           | OWNER_NEW                |                                                         | 
+| Owner.details          | OWNER_DETAILS            |                                                         |   
 | Owner.edit             | OWNER_EDIT               |                                                         |  
 | Owner.delete           | OWNER_DELETE             |                                                         |   
 | Owner.Pet.addNew       | OWNER_PET_NEW            |                                                         |
