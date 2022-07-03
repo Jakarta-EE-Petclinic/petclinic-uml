@@ -167,27 +167,29 @@ Object Oriented Design
 
 ![Figure Vetinarian_State_Diagram](uml/vet/concept/Vet__UseCase__State-Vetinarian_State_Diagram.png)
 
-| Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
-|-------------|-----------------------------------|----------------------------------|----------------------|---------------------|-----------------------------------|-------------------------------------------------|
-| Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
-| Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
-| Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
-| Use Case    | Actions                           | Frontend to View                 | View to Backend (DB) | outcome             | precondition                      | postcondition                                   |
-| Vet.addNew  | VetView.button_addNew_dialog()    | x                                |                      | change state        | VET_LIST                          | VET_NEW                                         |
-| Vet.addNew  | VetView.button_cancel_and_back()  | x                                |                      | change state        | VET_NEW                           | VET_LIST                                        |
-| Vet.addNew  | VetView.button_addNew_perform()   | x, calls: Vetinarian.db_addNew() |                      | if OK: change state | VET_NEW                           | VET_LIST                                        |
-| Vet.addNew  | VetView.db_addNew()               |                                  | x                    | OK                  | length(list(Vetinarian)) = n      | length(list(Vetinarian)) = n+1                  |
-| Vet.addNew  | VetView.db_addNew()               |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n      | display cause as flash message                  |
-| Vet.edit    | VetView.button_edit_dialog()      | x                                |                      | change state        | VET_LIST                          | VET_EDIT                                        |
-| Vet.edit    | VetView.button_cancel_and_back()  | x                                |                      | change state        | VET_EDIT                          | VET_LIST                                        |
-| Vet.edit    | VetView.button_update_perform()   | x, calls: Vetinarian.db_update() |                      | if OK: change state | VET_EDIT                          | VET_LIST                                        |
-| Vet.edit    | VetView.db_update()               |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n; 1 element changed |
-| Vet.edit    | VetView.db_update()               |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
-| Vet.delete  | VetView.button_delete_dialog()    | x                                |                      | change state        | VET_LIST                          | VET_DELETE                                      |
-| Vet.delete  | VetView.button_cancel_and_back()  | x                                |                      | change state        | VET_DELETE                        | VET_LIST                                        |
-| Vet.delete  | VetView.button_delete_perform()   | x, calls: Vetinarian.db_delete() |                      | if OK: change state | VET_DELETE                        | VET_LIST                                        |
-| Vet.delete  | VetView.db_delete()               |                                  | x                    | OK                  | length(list(Vetinarian)) = n > 0  | length(list(Vetinarian)) = n-1                  |
-| Vet.delete  | VetView.db_delete()               |                                  | x                    | not OK, invalid     | length(list(Vetinarian)) = n >= 0 | display cause as flash message                  |
+| PetType Use Cases | Actions                             | Frontend to View                   | View to Backend (DB) | outcome             | precondition                  | postcondition                            |
+|-------------------|-------------------------------------|------------------------------------|----------------------|---------------------|-------------------------------|------------------------------------------|
+| Vet.list          | VetView.button_list_dialog()        | x, calls: VetView.load_list()      |                      | change state        | length(list(Vet)) == 0        | VET_LIST_EMPTY                           |
+| Vet.list          | VetView.button_list_dialog()        | x, calls: VetView.load_list()      |                      | change state        | length(list(Vet)) > 0         | VET_LIST                                 |
+| Vet.list          | VetView.load_list()                 |                                    | x                    | list(Vet)           | length(list(Vet)) == 0        | VET_LIST_EMPTY                           |
+| Vet.list          | VetView.load_list()                 |                                    | x                    | list(Vet)           | length(list(Vet)) > 0         | VET_LIST                                 |
+| Vet.addNew        | VetView.button_addNew_dialog()      | x                                  |                      | change state        | VET_LIST                      | VET_NEW                                  |
+| Vet.addNew        | VetView.button_cancel_and_back()    | x                                  |                      | change state        | VET_NEW                       | VET_LIST                                 |
+| Vet.addNew        | VetView.button_addNew_perform()     | x, calls: VetView.db_addNew()      |                      | if OK: change state | VET_NEW                       | VET_DETAILS                              |
+| Vet.addNew        | VetView.db_addNew()                 |                                    | x                    | OK                  | length(list(Vet)) = n         | length(list(Vet)) = n+1                  |
+| Vet.addNew        | VetView.db_addNew()                 |                                    | x                    | not OK, invalid     | length(list(Vet)) = n         | display cause as flash message           |
+| Vet.details       | VetView.button_detail_dialog()      | x                                  |                      | change state        | VET_LIST                      | VET_DETAILS                              |
+| Vet.details       | VetView.button_detail_dialog()      | x                                  |                      | change state        | VET_LIST_EMPTY                | VET_DETAILS                              |
+| Vet.edit          | VetView.button_edit_dialog()        | x                                  |                      | change state        | VET_DETAILS                   | VET_EDIT                                 |
+| Vet.edit          | VetView.button_cancel_and_back()    | x                                  |                      | change state        | VET_EDIT                      | VET_LIST                                 |
+| Vet.edit          | VetView.button_update_perform()     | x, calls: VetView.db_update()      |                      | if OK: change state | VET_EDIT                      | VET_DETAILS                              |
+| Vet.edit          | VetView.db_update()                 |                                    | x                    | OK                  | length(list(Vet)) = n > 0     | length(list(Vet)) = n; 1 element changed |
+| Vet.edit          | VetView.db_update()                 |                                    | x                    | not OK, invalid     | length(list(Vet)) = n >= 0    | display cause as flash message           |
+| Vet.delete        | VetView.button_delete_dialog()      | x                                  |                      | change state        | VET_DETAILS                   | VET_DELETE                               |
+| Vet.delete        | VetView.button_cancel_and_back()    | x                                  |                      | change state        | VET_DELETE                    | VET_LIST                                 |
+| Vet.delete        | VetView.button_delete_perform()     | x, calls: VetView.db_delete()      |                      | if OK: change state | VET_DELETE                    | VET_DETAILS                              |
+| Vet.delete        | VetView.db_delete()                 |                                    | x                    | OK                  | length(list(Vet)) = n > 0     | length(list(Vet)) = n-1                  |
+| Vet.delete        | VetView.db_delete()                 |                                    | x                    | not OK, invalid     | length(list(Vet)) = n >= 0    | display cause as flash message           |
 
 ### VetinarianView Class
 
