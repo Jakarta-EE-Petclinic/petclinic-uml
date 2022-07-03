@@ -91,8 +91,13 @@ Object Oriented Design
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
+### (OwnerView and) PetTypeView Class Diagram
+
 ![Figure PetTypeView](uml/owner/implementation/View__Class-OwnerView_and_PetTypeView_Class_Diagram.png)
 
+### owner.oodm
+
+![Figure DB Class](uml/owner/implementation/DB__class-owner_oodm_Class_Diagram.png)
 
 ## Specialty
 
@@ -235,6 +240,8 @@ Object Oriented Design
 #### Owner State Diagram of Pet and Visits
 ![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State__details-Owner_Use_Case_State_Diagram_of_Pet_and_Visits.png)
 
+#### Table Owner State
+
 | Use Case               | Actions                                  | Frontend to View                  | View to Backend (DB) | outcome             | precondition                     | postcondition                              |
 |------------------------|------------------------------------------|-----------------------------------|----------------------|---------------------|----------------------------------|--------------------------------------------|
 | Owner.list             | OwnerView.button_list_dialog()           | x, calls: VetView.load_list()     |                      | change state        | length(list(Owner)) == 0         | OWNER_LIST_EMPTY                           |
@@ -283,9 +290,9 @@ Object Oriented Design
 | Owner.Pet.Visit.delete | OwnerView.db_visit_delete()              |                                   | x                    | OK                  | length(list(Visit)) = n > 0      | length(list(Visit)) = n-1                  |
 | Owner.Pet.Visit.delete | OwnerView.db_visit_delete()              |                                   | x                    | not OK, invalid     | length(list(Visit)) = n >= 0     | display cause as flash message             |
 
-### OwnerView Class
+### ### OwnerView (and PetTypeView) Class Diagram
 
-![Figure View Class](uml/vet/implementation/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
+![Figure View Class](uml/owner/implementation/View__Class-OwnerView_and_PetTypeView_Class_Diagram.png)
 
 ### owner.oodm
 
