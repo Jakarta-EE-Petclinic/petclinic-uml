@@ -169,7 +169,7 @@ Object Oriented Design
 
 #### PetType Use Case Diagram
 
-![Figure Uses Case PetType](uml/owner/concept/PetType__UseCase-PetType_Use_Case_Diagram.png)
+![Figure Uses Case PetType](uml/owner/pettype/PetType__UseCase-PetType_Use_Case_Diagram.png)
 
 #### PetType Use Cases and States Table
 
@@ -186,7 +186,7 @@ Object Oriented Design
 *) TODO
 #### PetType State Diagram
 
-![Figure Uses Cases PetType](uml/owner/concept/PetType__UseCase_State-PetType_Use_Case_State_Diagram.png)
+![Figure Uses Cases PetType](uml/owner/pettype/PetType__UseCase_State-PetType_Use_Case_State_Diagram.png)
 
 #### PetType State Table
 
@@ -219,7 +219,7 @@ Object Oriented Design
 
 #### Owner Use Cases
 
-![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases-Owner_Use_Case_Diagram.png)
+![Figure Uses Cases Owner](uml/owner/owner/Owner__UseCases-Owner_Use_Case_Diagram.png)
 
 #### Owner State
 
@@ -245,13 +245,13 @@ Object Oriented Design
 
 ##### Owner State Diagram
 
-![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State-Owner_Use_Case_State_Diagram.png)
+![Figure Uses Cases Owner](uml/owner/owner/Owner__UseCases__State-Owner_Use_Case_State_Diagram.png)
 
 ##### Owner State Diagram without Pet and Visits
-![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State__without_details-Owner_Use_Case_State_Diagram_without_Pet_and_Visits.png)
+![Figure Uses Cases Owner](uml/owner/owner/Owner__UseCases__State__without_details-Owner_Use_Case_State_Diagram_without_Pet_and_Visits.png)
 
 ##### Owner State Diagram of Pet and Visits
-![Figure Uses Cases Owner](uml/owner/concept/Owner__UseCases__State__details-Owner_Use_Case_State_Diagram_of_Pet_and_Visits.png)
+![Figure Uses Cases Owner](uml/owner/owner/Owner__UseCases__State__details-Owner_Use_Case_State_Diagram_of_Pet_and_Visits.png)
 
 #### Owner State Table
 
