@@ -116,27 +116,30 @@ Object Oriented Design
 
 ![Figure Uses Cases Specialty](uml/vet/concept/Specialty__UseCase__State-Specialty_State_Diagram.png)
 
-| Specialty Use Cases | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
-|---------------------|----------------------------------------|---------------------------------|----------------------|---------------------|----------------------------------|------------------------------------------------|
-| Use Case            | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
-| Use Case            | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
-| Use Case            | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
-| Use Case            | Actions                                | Frontend to View                | View to Backend (DB) | outcome             | precondition                     | postcondition                                  |
-| Specialty.addNew    | SpecialtyView.button_addNew_dialog()   | x                               |                      | change state        | SPECIALTY_LIST                   | SPECIALTY_NEW                                  |
-| Specialty.addNew    | SpecialtyView.button_cancel_and_back() | x                               |                      | change state        | SPECIALTY_NEW                    | SPECIALTY_LIST                                 |
-| Specialty.addNew    | SpecialtyView.button_addNew_perform()  | x, calls: Specialty.db_addNew() |                      | if OK: change state | SPECIALTY_NEW                    | SPECIALTY_LIST                                 |
-| Specialty.addNew    | SpecialtyView.db_addNew()              |                                 | x                    | OK                  | length(list(Specialty)) = n      | length(list(Specialty)) = n+1                  |
-| Specialty.addNew    | SpecialtyView.db_addNew()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n      | display cause as flash message                 |
-| Specialty.edit      | SpecialtyView.button_edit_dialog()     | x                               |                      | change state        | SPECIALTY_LIST                   | SPECIALTY_EDIT                                 |
-| Specialty.edit      | SpecialtyView.button_cancel_and_back() | x                               |                      | change state        | SPECIALTY_EDIT                   | SPECIALTY_LIST                                 |
-| Specialty.edit      | SpecialtyView.button_update_perform()  | x, calls: Specialty.db_update() |                      | if OK: change state | SPECIALTY_EDIT                   | SPECIALTY_LIST                                 |
-| Specialty.edit      | SpecialtyView.db_update()              |                                 | x                    | OK                  | length(list(Specialty)) = n > 0  | length(list(Specialty)) = n; 1 element changed |
-| Specialty.edit      | SpecialtyView.db_update()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
-| Specialty.delete    | SpecialtyView.button_delete_dialog()   | x                               |                      | change state        | SPECIALTY_LIST                   | SPECIALTY_DELETE                               |
-| Specialty.delete    | SpecialtyView.button_cancel_and_back() | x                               |                      | change state        | SPECIALTY_DELETE                 | SPECIALTY_LIST                                 |
-| Specialty.delete    | SpecialtyView.button_delete_perform()  | x, calls: Specialty.db_delete() |                      | if OK: change state | SPECIALTY_DELETE                 | SPECIALTY_LIST                                 |
-| Specialty.delete    | SpecialtyView.db_delete()              |                                 | x                    | OK                  | length(list(Specialty)) = n > 0  | length(list(Specialty)) = n-1                  |
-| Specialty.delete    | SpecialtyView.db_delete()              |                                 | x                    | not OK, invalid     | length(list(Specialty)) = n >= 0 | display cause as flash message                 |
+| PetType Use Cases   | Actions                                   | Frontend to View                         | View to Backend (DB) | outcome             | precondition                        | postcondition                                  |
+|---------------------|-------------------------------------------|------------------------------------------|--------------------|---------------------|-------------------------------------|------------------------------------------------|
+| Specialty.list      | SpecialtyView.button_list_dialog()        | x, calls: SpecialtyView.load_list()      |                    | change state        | length(list(Specialty)) == 0        | SPECIALTY_LIST_EMPTY                           |
+| Specialty.list      | SpecialtyView.button_list_dialog()        | x, calls: SpecialtyView.load_list()      |                    | change state        | length(list(Specialty)) > 0         | SPECIALTY_LIST                                 |
+| Specialty.list      | SpecialtyView.load_list()                 |                                          | x                  | list(Specialty)     | length(list(Specialty)) == 0        | SPECIALTY_LIST_EMPTY                           |
+| Specialty.list      | SpecialtyView.load_list()                 |                                          | x                  | list(Specialty)     | length(list(Specialty)) > 0         | SPECIALTY_LIST                                 |
+| Specialty.addNew    | SpecialtyView.button_addNew_dialog()      | x                                        |                    | change state        | SPECIALTY_LIST                      | SPECIALTY_NEW                                  |
+| Specialty.addNew    | SpecialtyView.button_cancel_and_back()    | x                                        |                    | change state        | SPECIALTY_NEW                       | SPECIALTY_LIST                                 |
+| Specialty.addNew    | SpecialtyView.button_addNew_perform()     | x, calls: SpecialtyView.db_addNew()      |                    | if OK: change state | SPECIALTY_NEW                       | SPECIALTY_DETAILS                              |
+| Specialty.addNew    | SpecialtyView.db_addNew()                 |                                          | x                  | OK                  | length(list(Specialty)) = n         | length(list(Specialty)) = n+1                  |
+| Specialty.addNew    | SpecialtyView.db_addNew()                 |                                          | x                  | not OK, invalid     | length(list(Specialty)) = n         | display cause as flash message                 |
+| Specialty.details   | SpecialtyView.button_detail_dialog()      | x                                        |                    | change state        | SPECIALTY_LIST                      | SPECIALTY_DETAILS                              |
+| Specialty.details   | SpecialtyView.button_detail_dialog()      | x                                        |                    | change state        | SPECIALTY_LIST_EMPTY                | SPECIALTY_DETAILS                              |
+| Specialty.edit      | SpecialtyView.button_edit_dialog()        | x                                        |                    | change state        | SPECIALTY_DETAILS                   | SPECIALTY_EDIT                                 |
+| Specialty.edit      | SpecialtyView.button_cancel_and_back()    | x                                        |                    | change state        | SPECIALTY_EDIT                      | SPECIALTY_LIST                                 |
+| Specialty.edit      | SpecialtyView.button_update_perform()     | x, calls: SpecialtyView.db_update()      |                    | if OK: change state | SPECIALTY_EDIT                      | SPECIALTY_DETAILS                              |
+| Specialty.edit      | SpecialtyView.db_update()                 |                                          | x                  | OK                  | length(list(Specialty)) = n > 0     | length(list(Specialty)) = n; 1 element changed |
+| Specialty.edit      | SpecialtyView.db_update()                 |                                          | x                  | not OK, invalid     | length(list(Specialty)) = n >= 0    | display cause as flash message                 |
+| Specialty.delete    | SpecialtyView.button_delete_dialog()      | x                                        |                    | change state        | SPECIALTY_DETAILS                   | SPECIALTY_DELETE                               |
+| Specialty.delete    | SpecialtyView.button_cancel_and_back()    | x                                        |                    | change state        | SPECIALTY_DELETE                    | SPECIALTY_LIST                                 |
+| Specialty.delete    | SpecialtyView.button_delete_perform()     | x, calls: SpecialtyView.db_delete()      |                    | if OK: change state | SPECIALTY_DELETE                    | SPECIALTY_DETAILS                              |
+| Specialty.delete    | SpecialtyView.db_delete()                 |                                          | x                  | OK                  | length(list(Specialty)) = n > 0     | length(list(Specialty)) = n-1                  |
+| Specialty.delete    | SpecialtyView.db_delete()                 |                                          | x                  | not OK, invalid     | length(list(Specialty)) = n >= 0    | display cause as flash message                 |
+
 
 ### SpecialtyViw Class
 ![Figure Class SpecialtyView](uml/vet/implementation/View__Class-VetView_and_SpecialtyView_Class_Diagram.png)
@@ -149,15 +152,16 @@ Object Oriented Design
 
 ### Vetinarian State Diagram
 
-| Use Case     | Vetinarian States      | Frontend                                |
-|--------------|------------------------|-----------------------------------------|
-| Vet.list     | VET_LIST_EMPTY         | Disable Search-Button and Paging-Widget |
-| Vet.list     | VET_LIST               |                                         |
-| Vet.search * | VET_LIST_SEARCH_RESULT |                                         |
-| Vet.addNew   | VET_NEW                |                                         |
-| Vet.details  | VET_DETAILS            |                                         |
-| Vet.edit     | VET_EDIT               |                                         |
-| Vet.delete   | VET_DELETE             |                                         |   
+| Use Case     | Vetinarian States       | Frontend                                |
+|--------------|-------------------------|-----------------------------------------|
+| Vet.list     | VET_LIST_EMPTY          | Disable Search-Button and Paging-Widget |
+| Vet.list     | VET_LIST                |                                         |
+| Vet.search * | VET_LIST_SEARCH_RESULT  |                                         |
+| Vet.addNew   | VET_NEW                 |                                         |
+| Vet.details  | vet_DETAILS             |                                         |
+| Vet.details  | VET_DETAILS             |                                         |
+| Vet.edit     | VET_EDIT                |                                         |
+| Vet.delete   | VET_DELETE              |                                         |   
 
 *) TODO
 
