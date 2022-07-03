@@ -91,7 +91,7 @@ Object Oriented Design
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
-![Figure PetTypeView](uml/owner/implementation/View__Class-OwnerView_Class_Diagram.png)
+![Figure PetTypeView](uml/owner/implementation/View__Class-OwnerView_and_PetTypeView_Class_Diagram.png)
 
 
 ## Specialty

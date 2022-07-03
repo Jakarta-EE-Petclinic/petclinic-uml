@@ -1,7 +1,7 @@
 @startuml
 
 
-title OwnerView Class Diagram
+title OwnerView and PetTypeView Class Diagram
 'https://plantuml.com/class-diagram
 
 left to right direction
