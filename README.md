@@ -38,11 +38,11 @@ Object Oriented Design
 ## Petclinic
 
 ### Petclinic Domain Class Modell
-![Figure Domain Class Modell](uml/Domain_Class_Modell-Petclinic_Domain_Class_Modell.png)
+![Figure Domain Class Modell](uml/Petclinic__Domain_Class_Modell-Petclinic_Domain_Class_Modell.png)
 
 ### Petclinic Use Case Diagram
 
-![Figure Uses Cases Petclinic](uml/Use_Cases-Petclinic_Use_Case_Diagram.png)
+![Figure Uses Cases Petclinic](uml/Petclinic__Use_Cases-Petclinic_Use_Case_Diagram.png)
 
 
 ## PetType 

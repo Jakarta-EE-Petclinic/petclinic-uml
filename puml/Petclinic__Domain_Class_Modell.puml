@@ -71,5 +71,5 @@ entity Specialty {
 Owner "one"  *--> "many"  Pet: pets
 Pet "one" *--> "many" Visit: visits
 Pet "many"  o-->  "one" PetType: petType
-Vet "one" o--> "many" Specialty: specialties
+Vet "many" o--> "many" Specialty: specialties
 @enduml
