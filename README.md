@@ -49,7 +49,7 @@ Object Oriented Design
 
 ### PetType Use Case Diagram
 
-![Figure Uses Case PetType](etc/uml/owner/concept/PetType__UseCase-PetType_Use_Case_Diagram.png)
+![Figure Uses Case PetType](etc/uml/owner/PetType__UseCase-PetType_Use_Case_Diagram.png)
 
 ### PetType State Diagram
 
@@ -67,7 +67,7 @@ Object Oriented Design
 
 *) TODO
 
-![Figure Uses Cases PetType](etc/uml/owner/concept/PetType__State-PetType_State_Diagram.png)
+![Figure Uses Cases PetType](etc/uml/owner/PetType__State-PetType_State_Diagram.png)
 
 | PetType Use Cases | Actions                              | Frontend to View              | View to Backend (DB) | outcome             | precondition                   | postcondition                                |
 |-------------------|--------------------------------------|-------------------------------|----------------------|---------------------|--------------------------------|----------------------------------------------|
@@ -91,7 +91,7 @@ Object Oriented Design
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | OK                  | length(list(PetType)) = n > 0  | length(list(PetType)) = n-1                  |
 | PetType.delete    | PetTypeView.db_delete()              |                               | x                    | not OK, invalid     | length(list(PetType)) = n >= 0 | display cause as flash message               |
 
-![Figure PetTypeView](etc/uml/owner/implementation/View__Class-OwnerView_Class_Diagram.png)
+![Figure PetTypeView](etc/uml/owner/classes/View__Class-OwnerView_Class_Diagram.png)
 
 
 ## Specialty
@@ -201,7 +201,7 @@ Object Oriented Design
 
 ### Owner Use Cases
 
-![Figure Uses Cases Owner](etc/uml/owner/concept/Owner__UseCases-Owner_Use_Case_Diagram.png)
+![Figure Uses Cases Owner](etc/uml/owner/Owner__UseCases-Owner_Use_Case_Diagram.png)
 
 ### Owner State
 
@@ -224,13 +224,13 @@ Object Oriented Design
 
 #### Owner State Diagram
 
-![Figure Uses Cases Owner](etc/uml/owner/concept/Owner__State-Owner_State_Diagram.png)
+![Figure Uses Cases Owner](etc/uml/owner/Owner__State-Owner_State_Diagram.png)
 
 #### Owner State Diagram without Pet and Visits
-![Figure Uses Cases Owner](etc/uml/owner/concept/Owner__State__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
+![Figure Uses Cases Owner](etc/uml/owner/Owner__State__without_details-Owner_State_Diagram_without_Pet_and_Visits.png)
 
 #### Owner State Diagram of Pet and Visits
-![Figure Uses Cases Owner](etc/uml/owner/concept/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
+![Figure Uses Cases Owner](etc/uml/owner/Owner__State__details-Owner_State_Diagram_of_Pet_and_Visits.png)
 
 | Use Case               | Actions                                  | Frontend to View                  | View to Backend (DB) | outcome             | precondition                  | postcondition                              |
 |------------------------|------------------------------------------|-----------------------------------|----------------------|---------------------|-------------------------------|--------------------------------------------|
@@ -286,7 +286,7 @@ Object Oriented Design
 
 ### owner.oodm
 
-![Figure DB Class](etc/uml/owner/implementation/DB__class-owner_oodm_Class_Diagram.png)
+![Figure DB Class](etc/uml/owner/classes/DB__class-owner_oodm_Class_Diagram.png)
 
 ## Imprint
 * [(c) 2022 Thomas Woehlke](https://github.com/thomaswoehlke)
