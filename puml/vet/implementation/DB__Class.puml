@@ -31,19 +31,38 @@ package vet.oodm {
     package vet.oodm.service {
 
         class VetService {
-
-        }
-
-        class VetDao {
-
+            search(String): VetEntity[]
+            getAll(): VetEntity[]
+            addNew(VetEntity): VetEntity
+            update(VetEntity): VetEntity
+            delete(VetEntity)
         }
 
         class SpecialtyService {
-
+            search(String): SpecialtyEntity[]
+            getAll(): SpecialtyEntity[]
+            addNew(SpecialtyEntity): SpecialtyEntity
+            update(SpecialtyEntity): SpecialtyEntity
+            delete(SpecialtyEntity)
         }
 
-        class SpecialtyDao {
+        package vet.oodm.service.dao {
 
+            class VetDao {
+                search(String): VetEntity[]
+                getAll(): VetEntity[]
+                addNew(VetEntity): VetEntity
+                update(VetEntity): VetEntity
+                delete(VetEntity)
+            }
+
+            class SpecialtyDao {
+                search(String): SpecialtyEntity[]
+                getAll(): SpecialtyEntity[]
+                addNew(SpecialtyEntity): SpecialtyEntity
+                update(SpecialtyEntity): SpecialtyEntity
+                delete(SpecialtyEntity)
+            }
         }
 
         VetService o--> VetDao

@@ -55,29 +55,65 @@ package owner.oodm {
     package owner.oodm.service {
 
         class OwnerService {
+            search(String): OwnerEntity[]
+            getAll(): OwnerEntity[]
+            addNew(OwnerEntity): OwnerEntity
+            update(OwnerEntity): OwnerEntity
+            delete(OwnerEntity)
         }
 
         class PetService {
+            getAll(): PetEntity[]
+            addNew(PetEntity): PetEntity
+            update(PetEntity): PetEntity
+            delete(PetEntity)
         }
 
         class VisitService {
+            getAll(): VisitEntity[]
+            addNew(VisitEntity): VisitEntity
+            update(VisitEntity): VisitEntity
+            delete(VisitEntity)
         }
 
         class PetTypeService {
+            search(String): PetTypeEntity[]
+            getAll(): PetTypeEntity[]
+            addNew(PetTypeEntity): PetTypeEntity
+            update(PetTypeEntity): PetTypeEntity
+            delete(PetTypeEntity)
         }
 
         package owner.oodm.service.dao {
 
             class OwnerDao {
+                search(String): OwnerEntity[]
+                getAll(): OwnerEntity[]
+                addNew(OwnerEntity): OwnerEntity
+                update(OwnerEntity): OwnerEntity
+                delete(OwnerEntity)
             }
 
             class PetDao {
+                getAll(): PetEntity[]
+                addNew(PetEntity): PetEntity
+                update(PetEntity): PetEntity
+                delete(PetEntity)
             }
 
             class VisitDao {
+                getAll(): VisitEntity[]
+                addNew(VisitEntity): VisitEntity
+                update(VisitEntity): VisitEntity
+                delete(VisitEntity)
             }
 
             class PetTypeDao {
+                search(String): PetTypeEntity[]
+                getAll(): PetTypeEntity[]
+                addNew(PetTypeEntity): PetTypeEntity
+                update(PetTypeEntity): PetTypeEntity
+                delete(PetTypeEntity)
             }
 
             OwnerDao ..> OwnerEntity
