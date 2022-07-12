@@ -34,16 +34,17 @@ package vet.oodm {
 
         }
 
-        class VetDao {
-
-        }
-
         class SpecialtyService {
 
         }
 
-        class SpecialtyDao {
+        package vet.oodm.service.dao {
+            class VetDao {
 
+            }
+            class SpecialtyDao {
+
+            }
         }
 
         VetService o--> VetDao
