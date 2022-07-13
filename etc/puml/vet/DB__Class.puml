@@ -31,19 +31,37 @@ package vet.oodm {
     package vet.oodm.service {
 
         class VetService {
-
+            getAll: Vet[]
+            addNew(Vet):Vet
+            update(Vet):Vet
+            delete(long id)
+            search(String searchterm): Vet[]
         }
 
         class SpecialtyService {
-
+            getAll: Specialty[]
+            addNew(Specialty):Specialty
+            update(Specialty):Specialty
+            delete(long id)
+            search(String searchterm): Vet[]
         }
 
         package vet.oodm.service.dao {
             class VetDao {
-
+                getAll: Specialty[]
+                findById(long): Specialty
+                addNew(Specialty):Specialty
+                update(Specialty):Specialty
+                delete(long id)
+                search(String searchterm): Vet[]
             }
             class SpecialtyDao {
-
+                getAll: Specialty[]
+                findById(long): Specialty
+                addNew(Specialty):Specialty
+                update(Specialty):Specialty
+                delete(long id)
+                search(String searchterm): Vet[]
             }
         }
 
@@ -67,7 +85,7 @@ package vet.oodm {
             String name
         }
 
-        VetDto "one" o--> "many" SpecialtyDto: specialties
+        VetDto "many" o--> "many" SpecialtyDto: specialties
 
         VetDto ..> VetService
         SpecialtyDto ..> SpecialtyService

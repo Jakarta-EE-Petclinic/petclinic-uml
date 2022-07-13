@@ -27,6 +27,6 @@ entity Specialty {
     delete()
 }
 
-Vet "one" o--> "many" Specialty: specialties
+Vet "many" o--> "many" Specialty: specialties
 
 @enduml
