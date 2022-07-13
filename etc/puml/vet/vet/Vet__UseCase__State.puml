@@ -7,7 +7,7 @@ title Vetinarian State Diagram
 left to right direction
 'top to bottom direction
 
-scale 1000 width
+scale 1200 width
 
 [*] -> VET_LIST: button_list_dialog()
 

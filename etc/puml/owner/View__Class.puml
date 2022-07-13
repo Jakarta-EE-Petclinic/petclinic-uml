@@ -7,7 +7,7 @@ title OwnerView and PetTypeView Class Diagram
 left to right direction
 'top to bottom direction
 
-scale 1000 width
+scale 1200 width
 
 class OwnerView {
 
@@ -109,7 +109,5 @@ enum PetTypeState {
     PETTYPE_EDIT
     PETTYPE_DELETE
 }
-
-
 
 @enduml

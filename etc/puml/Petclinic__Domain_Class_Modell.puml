@@ -7,23 +7,23 @@ title Petclinic Domain Class Modell
 left to right direction
 'top to bottom direction
 
-scale 1000 width
+scale 1200 width
 
 entity Owner {
- String firstName
- String lastName
- String address
- String houseNumber
- String addressInfo
- String city
- String zipCode
- String phoneNumber
- String email
- list()
- search()
- addNew()
- edit()
- delete()
+     String firstName
+     String lastName
+     String address
+     String houseNumber
+     String addressInfo
+     String city
+     String zipCode
+     String phoneNumber
+     String email
+     list()
+     search()
+     addNew()
+     edit()
+     delete()
 }
 
 entity Pet {

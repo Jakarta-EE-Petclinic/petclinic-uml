@@ -7,7 +7,7 @@ left to right direction
 
 'https://plantuml.com/use-case-diagram
 
-scale 2000 width
+scale 1200 width
 
 User - (Login)
 package application {
@@ -19,7 +19,6 @@ package application {
     (Navigation) --> (Logout)
 }
 package owner {
-
     (Navigation) --> (Owner.list)
     (Owner.list) -> (Owner.search)
     (Owner.list) --> (Owner.addNew)

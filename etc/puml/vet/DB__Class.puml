@@ -6,7 +6,7 @@ title vet.oodm Class Diagram
 left to right direction
 'top to bottom direction
 
-scale 2000 width
+scale 1200 width
 
 package vet.oodm {
 
@@ -25,7 +25,7 @@ package vet.oodm {
             String name
         }
 
-        VetEntity "one" o--> "many" SpecialtyEntity: specialties
+        VetEntity "many" o--> "many" SpecialtyEntity: specialties
     }
 
     package vet.oodm.service {
@@ -48,12 +48,11 @@ package vet.oodm {
 
         package vet.oodm.service.dao {
             class VetDao {
-                getAll: Specialty[]
-                findById(long): Specialty
-                addNew(Specialty):Specialty
-                update(Specialty):Specialty
-                delete(long id)
-                search(String searchterm): Vet[]
+               getAll: Vet[]
+               addNew(Vet):Vet
+               update(Vet):Vet
+               delete(long id)
+               search(String searchterm): Vet[]
             }
             class SpecialtyDao {
                 getAll: Specialty[]
@@ -61,7 +60,7 @@ package vet.oodm {
                 addNew(Specialty):Specialty
                 update(Specialty):Specialty
                 delete(long id)
-                search(String searchterm): Vet[]
+                search(String searchterm): Specialty[]
             }
         }
 

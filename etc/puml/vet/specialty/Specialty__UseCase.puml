@@ -7,7 +7,7 @@ title Specialty Use Case Diagram
 left to right direction
 'top to bottom direction
 
-scale 1000 width
+scale 1200 width
 
 User - (Login)
 package specialty {
