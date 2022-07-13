@@ -55,29 +55,69 @@ package owner.oodm {
     package owner.oodm.service {
 
         class OwnerService {
-        }
-
-        class PetService {
-        }
-
-        class VisitService {
+            getAll(): OwnerEntity[]
+            search(String searchterm): OwnerEntity[]
+            addNew(OwnerEntity):OwnerEntity
+            update(OwnerEntity):OwnerEntity
+            delete(long id)
         }
 
         class PetTypeService {
+            getAll(): PetTypeEntity[]
+            search(String searchterm): PetTypeEntity[]
+            addNew(PetTypeEntity):PetTypeEntity
+            update(PetTypeEntity):PetTypeEntity
+            delete(long id)
+        }
+
+        class PetService {
+            getAll(): PetEntity[]
+            search(String searchterm): PetEntity[]
+            addNew(PetEntity):PetEntity
+            update(PetEntity):PetEntity
+            delete(long id)
+        }
+
+        class VisitService {
+            getAll(): VisitSEntity[]
+            search(String searchterm): VisitSEntity[]
+            addNew(VisitSEntity):VisitSEntity
+            update(VisitSEntity):VisitSEntity
+            delete(long id)
         }
 
         package owner.oodm.service.dao {
 
             class OwnerDao {
-            }
-
-            class PetDao {
-            }
-
-            class VisitDao {
+                getAll(): OwnerEntity[]
+                search(String searchterm): OwnerEntity[]
+                addNew(OwnerEntity):OwnerEntity
+                update(OwnerEntity):OwnerEntity
+                delete(long id)
             }
 
             class PetTypeDao {
+                getAll(): PetTypeEntity[]
+                search(String searchterm): PetTypeEntity[]
+                addNew(PetTypeEntity):PetTypeEntity
+                update(PetTypeEntity):PetTypeEntity
+                delete(long id)
+            }
+
+            class PetDao {
+                getAll(): PetEntity[]
+                search(String searchterm): PetEntity[]
+                addNew(PetEntity):PetEntity
+                update(PetEntity):PetEntity
+                delete(long id)
+            }
+
+            class VisitDao {
+                getAll(): VisitSEntity[]
+                search(String searchterm): VisitSEntity[]
+                addNew(VisitSEntity):VisitSEntity
+                update(VisitSEntity):VisitSEntity
+                delete(long id)
             }
 
             OwnerDao ..> OwnerEntity
