@@ -33,13 +33,13 @@
     </scm>
 
     <issueManagement>
-        <url>https://github.com/Jakarta-EE-Petclinic/jakartaee-petclinic/issues</url>
+        <url>https://github.com/Jakarta-EE-Petclinic/petclinic-uml/issues</url>
         <system>GitHub</system>
     </issueManagement>
     <distributionManagement>
         <site>
             <id>localhost</id>
-            <url>file:///${user.home}/public_html/p/jakartaee-petclinic</url>
+            <url>file:///${user.home}/public_html/p/petclinic-uml</url>
         </site>
     </distributionManagement>
 
@@ -49,6 +49,248 @@
         <version.maven-release-plugin>3.0.0-M4</version.maven-release-plugin>
         <version.org.apache.maven.scm>1.13.0</version.org.apache.maven.scm>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo1.maven.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jcenter</id>
+            <name>JCenter Repository</name>
+            <url>https://jcenter.bintray.com/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jboss-releases</id>
+            <name>JBoss Releases Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jboss-thirdparty-releases</id>
+            <name>JBoss 3rd-party Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-releases</id>
+            <name>Sonatype Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jboss-public</id>
+            <name>JBoss Public Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>redhat-ga</id>
+            <name>Redhat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!--
+        <repository>
+            <id>ICM</id>
+            <name>ICM Repository</name>
+            <url>https://maven.icm.edu.pl/artifactory/repo/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        -->
+        <repository>
+            <id>Archive</id>
+            <name>Archive Repository</name>
+            <url>http://builds.archive.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jahia</id>
+            <name>Jahia Repository</name>
+            <url>https://maven.jahia.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>aspose</id>
+            <name>Aspose Repository</name>
+            <url>https://repository.aspose.com/repo/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>OneBusAway-Pub</id>
+            <name>OneBusAway Pub Repository</name>
+            <url>http://nexus.onebusaway.org/nexus/content/repositories/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>primefaces</id>
+            <name>Primefaces Repository</name>
+            <url>https://repository.primefaces.org</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Payara</id>
+            <url>https://nexus.payara.fish/service/rest/repository/browse/payara-artifacts/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>Central</id>
+            <name>Central Repository</name>
+            <url>https://repo1.maven.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>primefaces-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>https://repository.primefaces.org</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>java.net-public</id>
+            <name>Maven Java Net Snapshots and Releases</name>
+            <url>https://maven.java.net/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>jboss-3rd-party-repository</id>
+            <name>JBoss 3rd-party Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Maven Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>Alfresco</id>
+            <name>Alfresco Repository</name>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>Payara</id>
+            <url>https://nexus.payara.fish/service/rest/repository/browse/payara-artifacts/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
 
     <dependencyManagement>
         <dependencies>
