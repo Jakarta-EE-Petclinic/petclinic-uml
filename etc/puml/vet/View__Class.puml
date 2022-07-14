@@ -11,7 +11,7 @@ scale 1200 width
 class VetView {
 
     - VetState currentState
-    - Vet entity
+    - Vet ent32ity
     - Vet[] list
 
     showDetailsForm(Vet): VetState
