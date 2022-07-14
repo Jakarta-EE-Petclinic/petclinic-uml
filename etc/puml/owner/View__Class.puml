@@ -11,55 +11,52 @@ scale 1200 width
 
 class OwnerView {
 
+    - String searchterm
+
     - OwnerState currentState
+    - Owner entity
+    - Owner[] list
+    - Pet pet
+    - PetType[] petTypeList
+    - Visit visit
 
-    button_list_dialog(): OwnerState
-    - load_list(): boolean
+    search(): OwnerState
+    clearSearchterm(): OwnerState
 
-    button_owner_cancel_and_back(): OwnerState
+    showDetailsForm(Owner): OwnerState
+    cancelDetails(): OwnerState
 
-    button_owner_details_dialog(): OwnerState
-    button_owner_back_to_list(): OwnerState
+    showNewForm(): OwnerState
+    cancelNew(): OwnerState
+    saveNew(): OwnerState
 
-    button_owner_addNew_dialog(): OwnerState
-    button_owner_addNew_perform(): OwnerState
-    -db_owner_addNew(): boolean
+    showEditForm(): OwnerState
+    cancelEdited(): OwnerState
+    saveEdited(): OwnerState
 
-    button_owner_edit_dialog(): OwnerState
-    button_owner_update_perform(): OwnerState
-    - db_owner_update(): boolean
+    showDeleteForm(): OwnerState
+    cancelDelete(): OwnerState
+    performDelete(): OwnerState
 
-    button_owner_delete_dialog(): OwnerState
-    button_owner_delete_perform(): OwnerState
-    - db_owner_delete(): boolean
+    showOwnerPetNewForm(): OwnerState
+    cancelOwnerPetNew(): OwnerState
+    saveOwnerPetNew(): OwnerState
 
-    button_pet_cancel_and_back(): OwnerState
+    showOwnerPetEditForm(Pet pet): OwnerState
+    cancelOwnerPetEdit(): OwnerState
+    saveOwnerPetEdit(): OwnerState
 
-    button_pet_addNew_dialog(): OwnerState
-    button_pet_addNew_perform(): OwnerState
-    - db_pet_addNew(): boolean
+    editOwnerPetVisitNewForm(): OwnerState
+    cancelOwnerPetVisitNew(): OwnerState
+    saveOwnerPetVisitNew(): OwnerState
 
-    button_pet_edit_dialog(): OwnerState
-    button_pet_update_perform(): OwnerState
-    - db_pet_update(): boolean
-
-    button_pet_delete_dialog(): OwnerState
-    button_pet_delete_perform(): OwnerStates
-    - db_pet_delete(): boolean
-
-    button_visit_cancel_and_back(): OwnerState
-
-    button_visit_addNew_dialog(): OwnerState
-    button_visit_addNew_perform(): OwnerState
-    - db_visit_addNew(): boolean
-
-    button_visit_edit_dialog(): OwnerState
-    button_visit_update_perform(): OwnerState
-   - db_visit_update(): boolean
-
-    button_visit_delete_dialog(): OwnerState
-    button_visit_delete_perform(): OwnerState
-    - db_visit_delete(): boolean
+    - performSearch()
+    - loadList()
+    - newEntity()
+    - saveNewEntity()
+    - saveEditedEntity()
+    - deleteSelectedEntity()
+    - loadPetTypeList()
 }
 
 class PetTypeView {
