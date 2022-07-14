@@ -65,23 +65,30 @@ class OwnerView {
 class PetTypeView {
 
     - PetTypeState currentState
+    - PetType entity
+    - PetType[] list
 
-    button_list_dialog(): PetTypeState
-    - load_list(): boolean
+    showDetailsForm(PetType): PetTypeState
+    cancelDetails(): PetTypeState
 
-    button_cancel_and_back(): PetTypeState
+    showNewForm(): PetTypeState
+    cancelNew(): PetTypeState
+    saveNew(): PetTypeState
 
-    button_addNew_dialog(): PetTypeState
-    button_addNew_perform(): PetTypeState
-    - db_addNew(): boolean
+    showEditForm(): PetTypeState
+    cancelEdited(): PetTypeState
+    saveEdited(): PetTypeState
 
-    button_edit_dialog(): PetTypeState
-    button_update_perform(): PetTypeState
-    - db_update(): boolean
+    showDeleteForm(): PetTypeState
+    cancelDelete(): PetTypeState
+    performDelete(): PetTypeState
 
-    button_delete_dialog():PetTypeState
-    button_delete_perform():PetTypeState
-    - db_delete(): boolean
+    - loadList()
+    - newEntity()
+    - saveNewEntity()
+    - saveEditedEntity()
+    - deleteSelectedEntity()
+
 }
 
 

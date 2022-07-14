@@ -11,45 +11,57 @@ scale 1200 width
 class VetView {
 
     - VetState currentState
+    - Vet entity
+    - Vet[] list
 
-    button_list_dialog(): VetState
-    - load_list(): boolean
+    showDetailsForm(Vet): VetState
+    cancelDetails(): VetState
 
-    button_cancel_and_back(): VetState
+    showNewForm(): VetState
+    cancelNew(): VetState
+    saveNew(): VetState
 
-    button_addNew_dialog(): VetState
-    button_addNew_perform(): VetState
-    - db_addNew(): boolean
+    showEditForm(): VetState
+    cancelEdited(): VetState
+    saveEdited(): VetState
 
-    button_edit_dialog(): VetState
-    button_update_perform(): VetState
-    - db_update(): boolean
+    showDeleteForm(): VetState
+    cancelDelete(): VetState
+    performDelete(): VetState
 
-    button_delete_dialog(): VetState
-    button_delete_perform(): VetState
-    - db_delete(): boolean
+    - loadList()
+    - newEntity()
+    - saveNewEntity()
+    - saveEditedEntity()
+    - deleteSelectedEntity()
 }
 
 class SpecialtyView {
 
     - SpecialtyState currentState
+    - Specialty entity
+    - Specialty[] list
 
-    button_list_dialog(): SpecialtyState
-    - load_list(): boolean
+    showDetailsForm(Specialty): SpecialtyState
+    cancelDetails(): SpecialtyState
 
-    button_cancel_and_back(): SpecialtyState
+    showNewForm(): SpecialtyState
+    cancelNew(): SpecialtyState
+    saveNew(): SpecialtyState
 
-    button_addNew_dialog(): SpecialtyState
-    button_addNew_perform(): SpecialtyState
-    - db_addNew(): boolean
+    showEditForm(): SpecialtyState
+    cancelEdited(): SpecialtyState
+    saveEdited(): SpecialtyState
 
-    button_edit_dialog(): SpecialtyState
-    button_update_perform(): SpecialtyState
-    - db_update(): boolean
+    showDeleteForm(): SpecialtyState
+    cancelDelete(): SpecialtyState
+    performDelete(): SpecialtyState
 
-    button_delete_dialog(): SpecialtyState
-    button_delete_perform(): SpecialtyState
-    - db_delete(): boolean
+    - loadList()
+    - newEntity()
+    - saveNewEntity()
+    - saveEditedEntity()
+    - deleteSelectedEntity()
 }
 
 enum VetState {
