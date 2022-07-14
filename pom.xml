@@ -4,7 +4,7 @@
     <groupId>org.woehlke.jakartaee</groupId>
     <artifactId>petclinic-uml</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.7</version>
+    <version>1.0.8-SNAPSHOT</version>
 
     <name>Petclinic UML</name>
 
@@ -28,7 +28,7 @@
         <connection>scm:git:git@github.com:Jakarta-EE-Petclinic/petclinic-uml.git</connection>
         <developerConnection>scm:git:git@github.com:Jakarta-EE-Petclinic/petclinic-uml.git</developerConnection>
         <url>https://github.com/Jakarta-EE-Petclinic/petclinic-uml/tree/${project.scm.tag}</url>
-        <tag>petclinic-uml-1.0.7</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
