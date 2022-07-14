@@ -37,10 +37,10 @@
         <system>GitHub</system>
     </issueManagement>
     <distributionManagement>
-        <site>
-            <id>localhost</id>
-            <url>file:///${user.home}/public_html/p/petclinic-uml</url>
-        </site>
+      <repository>
+        <id>localhost</id>
+        <url>file:///${user.home}/public_html/p/petclinic-uml</url>
+      </repository>
     </distributionManagement>
 
     <properties>
