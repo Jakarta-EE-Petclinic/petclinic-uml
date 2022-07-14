@@ -1,3 +1,4 @@
 .idea
 puml/*.png
 puml/**/*.png
+/petclinic-uml.iml
