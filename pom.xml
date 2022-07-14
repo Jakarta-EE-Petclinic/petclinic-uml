@@ -9,13 +9,13 @@
 
     <name>Petclinic UML</name>
 
-    <description>A JSF and Jakarta EE Version of Spring Petclinic and Update from Java EE 7 Petclinic.</description>
-    <url>https://jakarta-ee-petclinic.github.io/jakartaee-petclinic/</url>
+    <description>Object Oriented Software Engineering: OOA and OOD of Migrations of Spring Petclinc using UML.</description>
+    <url>https://jakarta-ee-petclinic.github.io/petclinic-uml/</url>
     <organization>
         <name>Jakarta-EE-Petclinic</name>
         <url>https://github.com/Jakarta-EE-Petclinic</url>
     </organization>
-    <inceptionYear>2019</inceptionYear>
+    <inceptionYear>2022</inceptionYear>
     <developers>
         <developer>
             <id>thomaswoehlke</id>
@@ -25,19 +25,101 @@
         </developer>
     </developers>
 
+    <scm>
+        <connection>scm:git:git@github.com:Jakarta-EE-Petclinic/petclinic-uml.git</connection>
+        <developerConnection>scm:git:git@github.com:Jakarta-EE-Petclinic/petclinic-uml.git</developerConnection>
+        <url>https://github.com/Jakarta-EE-Petclinic/petclinic-uml/tree/${project.scm.tag}</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <url>https://github.com/Jakarta-EE-Petclinic/jakartaee-petclinic/issues</url>
+        <system>GitHub</system>
+    </issueManagement>
+    <distributionManagement>
+        <site>
+            <id>localhost</id>
+            <url>file:///${user.home}/public_html/p/jakartaee-petclinic</url>
+        </site>
+    </distributionManagement>
+
+    <properties>
+        <version.plantuml-maven-plugin>1.5.2</version.plantuml-maven-plugin>
+        <version.net.sourceforge.plantuml>1.2022.6</version.net.sourceforge.plantuml>
+        <version.maven-release-plugin>3.0.0-M4</version.maven-release-plugin>
+        <version.org.apache.maven.scm>1.13.0</version.org.apache.maven.scm>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.github.funthomas424242</groupId>
                 <artifactId>plantuml-maven-plugin</artifactId>
-                <version>1.5.2</version>
+                <version>${version.plantuml-maven-plugin}</version>
                 <type>maven-plugin</type>
             </dependency>
             <dependency>
                 <groupId>net.sourceforge.plantuml</groupId>
                 <artifactId>plantuml</artifactId>
-                <version>1.2020.19</version>
+                <version>${version.net.sourceforge.plantuml}</version>
                 <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${version.maven-release-plugin}</version>
+                <type>maven-plugin</type>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
+                <type>maven-plugin</type>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-providers-standard</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-svnexe</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-svn-commons</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-gitexe</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-git-commons</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-manager-plexus</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-client</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -52,6 +134,18 @@
             <artifactId>plantuml</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <type>maven-plugin</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-scm-plugin</artifactId>
+            <type>maven-plugin</type>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -60,7 +154,7 @@
             <plugin>
                 <groupId>com.github.funthomas424242</groupId>
                 <artifactId>plantuml-maven-plugin</artifactId>
-                <version>1.5.2</version>
+                <version>${version.plantuml-maven-plugin}</version>
                 <configuration>
                     <truncatePattern>src/main/*</truncatePattern>
                     <sourceFiles>
@@ -74,10 +168,20 @@
                     <dependency>
                         <groupId>net.sourceforge.plantuml</groupId>
                         <artifactId>plantuml</artifactId>
-                        <version>1.2022.6</version>
+                        <version>${version.net.sourceforge.plantuml}</version>
                         <scope>runtime</scope>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${version.maven-release-plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>${version.org.apache.maven.scm}</version>
             </plugin>
         </plugins>
     </build>
